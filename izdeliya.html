@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Изделия из искусственного камня — CORSTAR</title>
+  <meta name="description"
+    content="Изделия из искусственного камня для частных и коммерческих интерьеров. Столешницы, мойки, подоконники, ванны, ступени и индивидуальные объекты. Собственное производство с гарантией до 10 лет." />
+  <meta property="og:url" content="https://corstar.tilda.ws/izdeliya/" />
+  <meta property="og:title" content="Изделия из искусственного камня — CORSTAR" />
+  <meta property="og:description"
+    content="Собственное производство в Москве. Изготавливаем элементы любой сложности по вашим чертежам и эскизам с гарантией до 10 лет." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://corstar.tilda.ws/izdeliya/" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="shortcut icon" href="images/tildafavicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap"
+    type="text/css" />
+  <style>
+    /* ===== FONT FACE ===== */
+    @font-face {
+      font-family: 'PoppinsCyr';
+      src: url('fonts/PoppinsCyr-Regular.woff2') format('woff2'),
+        url('fonts/PoppinsCyr-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'PoppinsCyr';
+      src: url('fonts/PoppinsCyr-Bold.woff2') format('woff2'),
+        url('fonts/PoppinsCyr-Bold.otf') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* ===== RESET & BASE ===== */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Onest', 'PoppinsCyr', Arial, sans-serif;
+      color: #000000;
+      background: #ffffff;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: #5d5d5d;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      outline: none;
+      font-family: inherit;
+    }
+
+    input,
+    textarea {
+      font-family: inherit;
+    }
+
+    /* ===== CONTAINER ===== */
+    .container {
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #ffffff;
+      height: 60px;
+      display: flex;
+      align-items: center;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 20px;
+      gap: 144px;
+    }
+
+    .header-logo {
+      font-size: 40px;
+      font-weight: 500;
+      line-height: 1.16;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .header-logo a {
+      color: #000000;
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 23px;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .header-nav a {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.16;
+      white-space: nowrap;
+      color: #000000;
+    }
+
+    .header-nav a.is-active {
+      color: #5d5d5d;
+    }
+
+    .header-contacts {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+
+    .header-contacts .icon-social {
+      width: 30px;
+      height: 30px;
+      border-radius: 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .header-contacts .header-phone {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.55;
+      white-space: nowrap;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero-section {
+      padding: 24px 0 0;
+      background: #fafafa;
+    }
+
+    .hero-card {
+      position: relative;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden;
+      min-height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .hero-card__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-card__bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-card__overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(135deg,
+          rgba(0, 0, 0, 0.62) 0%,
+          rgba(0, 0, 0, 0.35) 50%,
+          rgba(0, 0, 0, 0.05) 100%);
+    }
+
+    .hero-card__content {
+      position: relative;
+      z-index: 2;
+      padding: 48px 50px 60px;
+      max-width: 900px;
+    }
+
+    .hero-card__title {
+      font-size: 52px;
+      font-weight: 500;
+      line-height: 1.1;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .hero-card__subtitle {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 640px;
+    }
+
+    /* ===== CATEGORY GRID ===== */
+    .categories-section {
+      padding: 80px 0 100px;
+      background: #fafafa;
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .category-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      cursor: pointer;
+      display: block;
+    }
+
+    .category-card__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .category-card:hover .category-card__img {
+      transform: scale(1.06);
+    }
+
+    .category-card__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.55) 100%);
+      transition: background 0.3s ease;
+    }
+
+    .category-card:hover .category-card__overlay {
+      background: linear-gradient(180deg, transparent 30%, rgba(0, 0, 0, 0.65) 100%);
+    }
+
+    .category-card__label {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 60px;
+      z-index: 2;
+    }
+
+    .category-card__name {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.4;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .category-card__arrow {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      z-index: 2;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #000000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: rotate(0deg);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .category-card:hover .category-card__arrow {
+      transform: translateX(3px);
+      background: #333333;
+    }
+
+    .category-card__arrow svg {
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke: #ffffff;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ===== CUSTOMIZATION SECTION ===== */
+    .customization-section {
+      padding: 100px 0;
+      background: #ffffff;
+    }
+
+    .customization-section .section-header {
+      margin-bottom: 60px;
+    }
+
+    .section-title {
+      font-size: 48px;
+      font-weight: 500;
+      line-height: 1.15;
+      color: #000000;
+    }
+
+    .customization-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .custom-card {
+      background: #fafafa;
+      border-radius: 20px;
+      padding: 40px 32px;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      cursor: default;
+    }
+
+    .custom-card:hover {
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+      transform: translateY(-2px);
+    }
+
+    .custom-card__icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: #000000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .custom-card__icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: #ffffff;
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .custom-card__title {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.3;
+      color: #000000;
+      margin-bottom: 12px;
+    }
+
+    .custom-card__text {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: #5d5d5d;
+    }
+
+    /* ===== MATERIALS BRIDGE ===== */
+    .materials-section {
+      padding: 0 0 100px;
+      background: #ffffff;
+    }
+
+    .materials-banner {
+      max-width: 1400px;
+      margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+    }
+
+    .materials-banner__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .materials-banner__bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .materials-banner__overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(90deg,
+          rgba(0, 0, 0, 0.72) 0%,
+          rgba(0, 0, 0, 0.45) 60%,
+          rgba(0, 0, 0, 0.15) 100%);
+    }
+
+    .materials-banner__content {
+      position: relative;
+      z-index: 2;
+      padding: 60px;
+      max-width: 640px;
+    }
+
+    .materials-banner__title {
+      font-size: 36px;
+      font-weight: 500;
+      line-height: 1.2;
+      color: #ffffff;
+      margin-bottom: 16px;
+    }
+
+    .materials-banner__text {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 32px;
+    }
+
+    .btn-catalog {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      background: #ffffff;
+      color: #000000;
+      font-size: 16px;
+      font-weight: 500;
+      border-radius: 12px;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-catalog:hover {
+      background: #f0f0f0;
+      color: #000000;
+      transform: translateY(-1px);
+    }
+
+    .btn-catalog svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform 0.2s ease;
+    }
+
+    .btn-catalog:hover svg {
+      transform: translateX(3px);
+    }
+
+    /* ===== SPLIT CTA ===== */
+    .split-cta {
+      background: #fafafa;
+      padding: 80px 0 0;
+    }
+
+    .split-cta__inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-radius: 20px;
+      overflow: hidden;
+      min-height: 480px;
+    }
+
+    .split-cta__left {
+      background: #1a1a1a;
+      padding: 60px 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .split-cta__left-title {
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 1.2;
+      color: #ffffff;
+      margin-bottom: 16px;
+    }
+
+    .split-cta__left-text {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 40px;
+    }
+
+    .split-cta__contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .split-cta__contact-item svg {
+      width: 20px;
+      height: 20px;
+      stroke: rgba(255, 255, 255, 0.5);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    .split-cta__contact-item a,
+    .split-cta__contact-item span {
+      font-size: 16px;
+      color: #ffffff;
+      font-weight: 400;
+    }
+
+    .split-cta__contact-item a:hover {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .split-cta__socials {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .split-cta__socials a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+    }
+
+    .split-cta__socials a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .split-cta__socials svg {
+      width: 18px;
+      height: 18px;
+      fill: #ffffff;
+    }
+
+    .split-cta__right {
+      background: #f7f7f7;
+      padding: 60px 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .split-cta__right-title {
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 1.25;
+      color: #000000;
+      margin-bottom: 32px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 400;
+      color: #5d5d5d;
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #d9d9d9;
+      border-radius: 12px;
+      background: #ffffff;
+      font-size: 15px;
+      color: #000000;
+      transition: border-color 0.2s ease;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #000000;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #aaaaaa;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 16px 32px;
+      background: #000000;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 500;
+      border-radius: 12px;
+      transition: background 0.2s ease, transform 0.2s ease;
+      margin-top: 8px;
+    }
+
+    .btn-submit:hover {
+      background: #333333;
+      transform: translateY(-1px);
+    }
+
+    .form-privacy {
+      font-size: 12px;
+      color: #aaaaaa;
+      line-height: 1.5;
+      margin-top: 12px;
+    }
+
+    .form-privacy a {
+      color: #5d5d5d;
+      text-decoration: underline;
+    }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      background: #ffffff;
+      padding: 100px 0 50px;
+    }
+
+    .footer-top {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+
+    .footer-logo {
+      font-size: 60px;
+      font-weight: 400;
+      line-height: 1.25;
+      flex-shrink: 0;
+    }
+
+    .footer-cta {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1.25;
+    }
+
+    .footer-cta a {
+      text-decoration: underline;
+    }
+
+    .footer-divider {
+      width: 100%;
+      height: 1px;
+      background: #d9d9d9;
+      opacity: 0.75;
+      margin-bottom: 65px;
+    }
+
+    .footer-columns {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      margin-bottom: 65px;
+    }
+
+    .footer-col-label {
+      font-size: 13px;
+      font-weight: 400;
+      color: #5d5d5d;
+      margin-bottom: 12px;
+    }
+
+    .footer-col-content {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.55;
+      color: #000000;
+    }
+
+    .footer-col-content a {
+      display: block;
+      margin-bottom: 4px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-col-content a:hover {
+      color: #979797;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .footer-bottom a,
+    .footer-bottom span {
+      font-size: 13px;
+      color: #5d5d5d;
+      font-weight: 400;
+    }
+
+    .footer-bottom a:hover {
+      color: #979797;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media screen and (max-width: 1199px) {
+      .header-inner {
+        gap: 60px;
+      }
+
+      .hero-card__title {
+        font-size: 44px;
+      }
+
+      .categories-grid {
+        gap: 12px;
+      }
+
+      .section-title {
+        font-size: 40px;
+      }
+
+      .materials-banner__title {
+        font-size: 30px;
+      }
+
+      .split-cta__inner {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-logo {
+        font-size: 50px;
+      }
+
+      .footer-columns {
+        gap: 20px;
+      }
+    }
+
+    @media screen and (max-width: 959px) {
+      .header-nav {
+        display: none;
+      }
+
+      .header-inner {
+        gap: 20px;
+      }
+
+      .hero-card {
+        min-height: 400px;
+      }
+
+      .hero-card__title {
+        font-size: 36px;
+      }
+
+      .hero-card__content {
+        padding: 36px 32px 48px;
+      }
+
+      .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .customization-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .materials-banner {
+        min-height: 320px;
+      }
+
+      .materials-banner__content {
+        padding: 40px;
+      }
+
+      .materials-banner__title {
+        font-size: 26px;
+      }
+
+      .split-cta__inner {
+        grid-template-columns: 1fr;
+      }
+
+      .split-cta__left {
+        padding: 48px 36px;
+      }
+
+      .split-cta__right {
+        padding: 48px 36px;
+      }
+
+      .footer-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .footer-logo {
+        font-size: 50px;
+        line-height: 1.1;
+      }
+
+      .footer-columns {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media screen and (max-width: 639px) {
+      .hero-card {
+        min-height: 360px;
+      }
+
+      .hero-card__title {
+        font-size: 30px;
+      }
+
+      .hero-card__subtitle {
+        font-size: 16px;
+      }
+
+      .hero-card__content {
+        padding: 28px 24px 40px;
+      }
+
+      .categories-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .categories-section {
+        padding: 48px 0 60px;
+      }
+
+      .customization-section {
+        padding: 60px 0;
+      }
+
+      .customization-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 32px;
+      }
+
+      .custom-card {
+        padding: 28px 24px;
+      }
+
+      .materials-banner {
+        min-height: 280px;
+      }
+
+      .materials-banner__content {
+        padding: 28px 24px;
+      }
+
+      .materials-banner__title {
+        font-size: 22px;
+      }
+
+      .split-cta {
+        padding: 48px 0 0;
+      }
+
+      .split-cta__left {
+        padding: 36px 24px;
+      }
+
+      .split-cta__left-title {
+        font-size: 26px;
+      }
+
+      .split-cta__right {
+        padding: 36px 24px;
+      }
+
+      .split-cta__right-title {
+        font-size: 22px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-logo {
+        font-size: 38px;
+      }
+
+      .footer-cta {
+        font-size: 20px;
+      }
+
+      .footer-columns {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .footer-bottom-links {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+      }
+    }
+
+    @media screen and (max-width: 479px) {
+      .header-logo {
+        font-size: 32px;
+      }
+
+      .hero-card__title {
+        font-size: 26px;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .footer-columns {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ===== ANIMATION ===== */
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+
+      .category-card:hover .category-card__img {
+        transform: none;
+      }
+    }
+  
+    /* ===== MOBILE NAV DRAWER & BURGER CROSS ===== */
+    .header-burger {
+      display: none;
+      width: 28px;
+      height: 20px;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+
+    .header-burger span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #000;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .header-burger.is-active span:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+    .header-burger.is-active span:nth-child(2) {
+      opacity: 0;
+    }
+    .header-burger.is-active span:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+
+    @media screen and (max-width: 959px) {
+      .header-burger {
+        display: flex !important;
+      }
+      .header-nav.is-open {
+        display: flex !important;
+        flex-direction: column;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #ffffff;
+        padding: 40px 20px;
+        gap: 24px;
+        z-index: 99;
+        align-items: flex-start;
+      }
+      .header-nav.is-open a {
+        font-size: 24px !important;
+        font-weight: 500;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <div class="header-logo">
+        <a href="/">CORSTAR</a>
+      </div>
+      <nav class="header-nav" aria-label="Основная навигация">
+        <a href="/izdeliya/" class="is-active">Изделия</a>
+        <a href="/catalog-kamnya/">Каталог камня</a>
+        <a href="/portfolio/">Портфолио</a>
+        <a href="/partneram/">Партнерам</a>
+        <a href="/o-kompanii/">О компании</a>
+        <a href="/kontakty/">Контакты</a>
+      </nav>
+      <div class="header-contacts">
+        <a href="https://t.me/" class="icon-social"
+          style="background-image:url('images/tild3336-3233-4061-b363-653764393262__image.png')"
+          aria-label="Telegram"></a>
+        <a href="https://wa.me/" class="icon-social"
+          style="background-image:url('images/tild6330-3839-4263-b533-323737306437__image.png')"
+          aria-label="WhatsApp"></a>
+        <a href="tel:+79999999999" class="header-phone">+7 (999) 999-99-99</a>
+      </div>
+      <button class="header-burger" aria-label="Открыть меню" id="burger-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero-section" id="hero-izdeliya">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-card__bg">
+            <img src="images/hero_izdeliya.png" alt="Интерьер с изделиями из искусственного камня" loading="eager" />
+          </div>
+          <div class="hero-card__overlay"></div>
+          <div class="hero-card__content">
+            <h1 class="hero-card__title">Изделия из искусственного камня для частных и&nbsp;коммерческих интерьеров</h1>
+            <p class="hero-card__subtitle">Собственное производство в Москве. Изготавливаем элементы любой сложности по
+              вашим чертежам и эскизам с гарантией до 10 лет</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CATEGORY GRID ===== -->
+    <section class="categories-section" id="categories-grid">
+      <div class="container">
+        <div class="categories-grid">
+
+          <a href="/izdeliya/stoleshnitsy/" class="category-card" id="card-stoleshnitsy">
+            <img class="category-card__img" src="images/cat_stoleshnitsy.png" alt="Столешницы для кухни и ванной"
+              loading="lazy" />
+            <div class="category-card__overlay"></div>
+            <div class="category-card__label">
+              <span class="category-card__name">Столешницы</span>
+            </div>
+            <div class="category-card__arrow">
+              <svg viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </div>
+          </a>
+
+          <a href="/izdeliya/mojki/" class="category-card" id="card-mojki">
+            <img class="category-card__img" src="images/cat_mojki.png" alt="Интегрированные мойки и раковины"
+              loading="lazy" />
+            <div class="category-card__overlay"></div>
+            <div class="category-card__label">
+              <span class="category-card__name">Мойки и раковины</span>
+            </div>
+            <div class="category-card__arrow">
+              <svg viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </div>
+          </a>
+
+          <a href="/izdeliya/podokonniki/" class="category-card" id="card-podokonniki">
+            <img class="category-card__img" src="images/cat_podokonniki.png" alt="Подоконники и отливы"
+              loading="lazy" />
+            <div class="category-card__overlay"></div>
+            <div class="category-card__label">
+              <span class="category-card__name">Подоконники</span>
+            </div>
+            <div class="category-card__arrow">
+              <svg viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </div>
+          </a>
+
+          <a href="/izdeliya/vanny/" class="category-card" id="card-vanny">
+            <img class="category-card__img" src="images/cat_vanny.png" alt="Ванны, душевые поддоны и облицовка"
+              loading="lazy" />
+            <div class="category-card__overlay"></div>
+            <div class="category-card__label">
+              <span class="category-card__name">Ванны и душевые</span>
+            </div>
+            <div class="category-card__arrow">
+              <svg viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </div>
+          </a>
+
+          <a href="/izdeliya/stupeni/" class="category-card" id="card-stupeni">
+            <img class="category-card__img" src="images/cat_stupeni.png" alt="Ступени и лестничные марши"
+              loading="lazy" />
+            <div class="category-card__overlay"></div>
+            <div class="category-card__label">
+              <span class="category-card__name">Ступени и лестницы</span>
+            </div>
+            <div class="category-card__arrow">
+              <svg viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </div>
+          </a>
+
+          <a href="/izdeliya/individualno/" class="category-card" id="card-individualno">
+            <img class="category-card__img" src="images/cat_individualno.png" alt="Индивидуальные и сложные объекты"
+              loading="lazy" />
+            <div class="category-card__overlay"></div>
+            <div class="category-card__label">
+              <span class="category-card__name">Индивидуальные объекты</span>
+            </div>
+            <div class="category-card__arrow">
+              <svg viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CUSTOMIZATION ===== -->
+    <section class="customization-section" id="customization">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Возможности кастомизации</h2>
+        </div>
+        <div class="customization-grid">
+
+          <div class="custom-card" id="custom-edges">
+            <div class="custom-card__icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M3 3h18v18H3z" stroke-width="0" fill="none" />
+                <path d="M21 3H3v18h18V3z" stroke-width="1.5" />
+                <path d="M3 3c0 0 6 0 6 6" stroke-width="1.5" />
+                <path d="M21 3c0 0-6 0-6 6" stroke-width="1.5" />
+              </svg>
+            </div>
+            <h3 class="custom-card__title">Типы кромок и фасок</h3>
+            <p class="custom-card__text">Прямые, скруглённые и фигурные кромки. Выбирайте радиус скругления, который
+              идеально впишется в ваш интерьер — от строгих прямых углов до мягких обтекаемых форм.</p>
+          </div>
+
+          <div class="custom-card" id="custom-joints">
+            <div class="custom-card__icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 4h6v16H4z" />
+                <path d="M14 4h6v16h-6z" />
+                <path d="M10 8h4M10 12h4M10 16h4" stroke-dasharray="2 2" />
+              </svg>
+            </div>
+            <h3 class="custom-card__title">Бесшовная стыковка</h3>
+            <p class="custom-card__text">Технология бесшовного соединения элементов создаёт монолитную поверхность без
+              видимых стыков. Идеально для Г-образных и П-образных столешниц, островов.</p>
+          </div>
+
+          <div class="custom-card" id="custom-walls">
+            <div class="custom-card__icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M3 21V8l9-5 9 5v13" />
+                <path d="M9 21V14h6v7" />
+                <path d="M3 8l9 5 9-5" />
+              </svg>
+            </div>
+            <h3 class="custom-card__title">Примыкания к стенам</h3>
+            <p class="custom-card__text">Интегрированные бортики и плинтуса для герметичного и эстетичного соединения
+              столешницы со стеной. Защита от протечек и скопления грязи.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MATERIALS BRIDGE ===== -->
+    <section class="materials-section" id="materials-bridge">
+      <div class="container">
+        <div class="materials-banner">
+          <div class="materials-banner__bg">
+            <img src="images/materials_banner.png" alt="Образцы камня — акрил и кварц" loading="lazy" />
+          </div>
+          <div class="materials-banner__overlay"></div>
+          <div class="materials-banner__content">
+            <h2 class="materials-banner__title">500+ оттенков для вашего интерьера</h2>
+            <p class="materials-banner__text">Любое изделие может быть выполнено в одном из 500+ оттенков из нашего
+              каталога. Подберите материал — акрил или кварц — под ваш дизайн-проект.</p>
+            <a href="/catalog-kamnya/" class="btn-catalog" id="btn-open-catalog">
+              <span>Открыть каталог материалов</span>
+              <svg viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SPLIT CTA ===== -->
+    <section class="split-cta" id="split-cta">
+      <div class="container">
+        <div class="split-cta__inner">
+
+          <div class="split-cta__left">
+            <h2 class="split-cta__left-title">Есть готовый чертёж или&nbsp;эскиз?</h2>
+            <p class="split-cta__left-text">Отправьте его нам на быстрый расчёт стоимости. Мы свяжемся с вами в течение
+              24 часов.</p>
+
+            <div class="split-cta__contact-item">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <path d="M22 6l-10 7L2 6" />
+              </svg>
+              <a href="mailto:hello.obtix@gmail.com">hello.obtix@gmail.com</a>
+            </div>
+            <div class="split-cta__contact-item">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+              </svg>
+              <a href="tel:+14153928476">+1 (415) 392-8476</a>
+            </div>
+
+            <div class="split-cta__socials">
+              <a href="https://t.me/" aria-label="Telegram">
+                <svg viewBox="0 0 24 24">
+                  <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                </svg>
+              </a>
+              <a href="https://vk.com/" aria-label="VK">
+                <svg viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                </svg>
+              </a>
+              <a href="https://instagram.com/" aria-label="Instagram">
+                <svg viewBox="0 0 24 24">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="split-cta__right">
+            <h2 class="split-cta__right-title">Обсудить проект</h2>
+            <form id="form-discuss-project" action="#" method="POST">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="input-name">Ваше имя</label>
+                  <input type="text" id="input-name" name="name" placeholder="Иван Иванов" required />
+                </div>
+                <div class="form-group">
+                  <label for="input-phone">Ваш телефон</label>
+                  <input type="tel" id="input-phone" name="phone" placeholder="+7 (___) ___-__-__" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="input-message">Сообщение (необязательно)</label>
+                <textarea id="input-message" name="message"
+                  placeholder="Опишите ваш проект или прикрепите файл..."></textarea>
+              </div>
+              <button type="submit" class="btn-submit" id="btn-submit-project">Обсудить проект</button>
+              <p class="form-privacy">Нажимая на кнопку «Обсудить проект», вы принимаете условия <a
+                  href="/privacy/">политики конфиденциальности</a> и соглашаетесь на обработку персональных данных.</p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" id="site-footer">
+    <div class="container">
+
+      <div class="footer-top">
+        <div class="footer-logo">CORSTAR</div>
+        <div class="footer-cta">Ищете качественного подрядчика или компетентного партнера?<br><a href="/partneram/">Мы
+            на связи!</a></div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-columns">
+        <div>
+          <div class="footer-col-label">Наш офис</div>
+          <div class="footer-col-content">г. Москва, Улица Юных Ленинцев</div>
+        </div>
+        <div>
+          <div class="footer-col-label">Навигация</div>
+          <div class="footer-col-content">
+            <a href="/izdeliya/">Изделия</a>
+            <a href="/catalog-kamnya/">Каталог камня</a>
+            <a href="/portfolio/">Портфолио</a>
+            <a href="/partneram/">Партнерам</a>
+            <a href="/o-kompanii/">О Компании</a>
+            <a href="/kontakty/">Контакты</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-label">Соц. Сети</div>
+          <div class="footer-col-content">
+            <a href="https://t.me/">Telegram</a>
+            <a href="https://facebook.com/">Facebook</a>
+            <a href="https://instagram.com/">Instagram</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-label">&nbsp;</div>
+          <div class="footer-col-content">&nbsp;</div>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-bottom">
+        <span>All rights reserved ©</span>
+        <div class="footer-bottom-links">
+          <a href="/privacy/">Политика конфиденциальности</a>
+          <a href="/terms/">Условия пользовательского соглашения</a>
+          <a href="#site-header">Вверх</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ===== NAV & ROUTING SCRIPT ===== -->
+  <script>
+    /* ---- Navigation & Local file:// Routing ---- */
+    (function () {
+      // 1. Local Routing for file:// protocol
+      if (window.location.protocol === 'file:') {
+        document.querySelectorAll('a').forEach(function (a) {
+          var href = a.getAttribute('href');
+          if (href) {
+            if (href === '/') {
+              a.setAttribute('href', 'index.html');
+            } else if (href.startsWith('/')) {
+              var parts = href.split('#');
+              var path = parts[0];
+              var hash = parts[1] ? '#' + parts[1] : '';
+              if (path.endsWith('/')) path = path.slice(0, -1);
+              path = path.slice(1) + '.html';
+              a.setAttribute('href', path + hash);
+            }
+          }
+        });
+      }
+
+      // 2. Mobile Burger Toggle
+      var burger = document.getElementById('burger-toggle');
+      var nav = document.querySelector('.header-nav');
+      if (burger && nav) {
+        burger.addEventListener('click', function () {
+          burger.classList.toggle('is-active');
+          nav.classList.toggle('is-open');
+          if (nav.classList.contains('is-open')) {
+            document.body.style.overflow = 'hidden';
+          } else {
+            document.body.style.overflow = '';
+          }
+        });
+
+        // Close menu on link click
+        nav.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () {
+            burger.classList.remove('is-active');
+            nav.classList.remove('is-open');
+            document.body.style.overflow = '';
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+
+</html>
