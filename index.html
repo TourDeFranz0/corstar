@@ -7,16 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CORSTAR — Изготовление и монтаж изделий из искусственного камня в Москве</title>
   <meta name="description"
-    content="CORSTAR — производство изделий из искусственного камня в Москве. Столешницы, мойки, подоконники, ванны, ступени. Замер, изготовление и монтаж с гарантией 3 года." />
+    content="CORSTAR — производство изделий из искусственного камня в Москве. Столешницы, мойки, подоконники, ванны, ступени. Замер, изготовление и монтаж с гарантией 12 месяцев." />
   <meta property="og:url" content="https://corstar.tilda.ws/" />
   <meta property="og:title" content="CORSTAR — Изготовление и монтаж изделий из искусственного камня" />
   <meta property="og:description"
-    content="Производство и монтаж изделий из акрилового и кварцевого камня в Москве. Гарантия 3 года." />
+    content="Производство и монтаж изделий из акрилового и кварцевого камня в Москве. Гарантия 12 месяцев." />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://corstar.tilda.ws/" />
   <meta name="format-detection" content="telephone=no" />
   <link rel="shortcut icon" href="images/tildafavicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap"
+    type="text/css" />
   <style>
     /* ===== FONT FACE ===== */
     @font-face {
@@ -35,6 +36,31 @@
       font-weight: 700;
       font-style: normal;
       font-display: swap;
+    }
+
+    /* ===== DESIGN TOKENS ===== */
+    :root {
+      --color-primary: #000000;
+      --color-secondary: #5d5d5d;
+      --color-muted: #aaaaaa;
+      --color-border: #d9d9d9;
+      --color-border-light: #e8e8e8;
+      --color-bg: #ffffff;
+      --color-bg-dark: #1a1a1a;
+      --color-bg-light: #f7f7f7;
+      --color-bg-hover: #fafafa;
+      --color-surface: #f2f2f2;
+      --color-accent: #333333;
+      --font-primary: 'Onest', 'PoppinsCyr', Arial, sans-serif;
+      --radius-sm: 12px;
+      --radius-md: 16px;
+      --radius-lg: 20px;
+      --radius-full: 100px;
+      --transition-fast: 0.2s ease;
+      --transition-normal: 0.3s ease;
+      --transition-slow: 0.5s ease;
+      --container-max: 1440px;
+      --container-pad: 20px;
     }
 
     /* ===== RESET & BASE ===== */
@@ -105,9 +131,10 @@
       top: 0;
       z-index: 100;
       background: #ffffff;
-      height: 60px;
+      height: 70px;
       display: flex;
       align-items: center;
+      border-bottom: 1px solid #f2f2f2;
     }
 
     .header-inner {
@@ -117,15 +144,17 @@
       max-width: 1440px;
       margin: 0 auto;
       padding: 0 20px;
-      gap: 144px;
+      justify-content: space-between;
+      gap: 20px;
     }
 
     .header-logo {
-      font-size: 40px;
+      font-size: 32px;
       font-weight: 500;
-      line-height: 1.16;
+      line-height: 1;
       white-space: nowrap;
       flex-shrink: 0;
+      letter-spacing: -0.02em;
     }
 
     .header-logo a {
@@ -154,8 +183,7 @@
     .header-contacts {
       display: flex;
       align-items: center;
-      gap: 6px;
-      margin-left: auto;
+      gap: 12px;
       flex-shrink: 0;
     }
 
@@ -167,11 +195,17 @@
       background-position: center;
       background-repeat: no-repeat;
       flex-shrink: 0;
+      transition: max-width 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+                  opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+                  margin 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+      max-width: 30px;
+      opacity: 1;
+      overflow: hidden;
     }
 
     .header-contacts .header-phone {
-      font-size: 14px;
-      font-weight: 400;
+      font-size: 15px;
+      font-weight: 500;
       line-height: 1.55;
       white-space: nowrap;
     }
@@ -187,6 +221,10 @@
       background: none;
       border: none;
       padding: 0;
+      flex-shrink: 0;
+      transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+                  opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+                  background-color 0.2s ease;
     }
 
     .header-burger span {
@@ -194,7 +232,36 @@
       width: 100%;
       height: 2px;
       background: #000;
-      transition: transform 0.3s ease, opacity 0.3s ease;
+      transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+                  opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .header-burger.is-active span:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+
+    .header-burger.is-active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .header-burger.is-active span:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Mobile nav drawer backdrop */
+    .mobile-nav-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 98;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .mobile-nav-backdrop.is-visible {
+      display: block;
+      opacity: 1;
     }
 
     /* ============================================================
@@ -1226,9 +1293,32 @@
     /* ============================================================
        RESPONSIVE
        ============================================================ */
+    /* Keep hidden on desktop */
+    .mobile-only-contacts {
+      display: none;
+    }
+
     @media screen and (max-width: 1199px) {
       .header-inner {
-        gap: 60px;
+        gap: 16px;
+      }
+
+      .header-logo {
+        font-size: 28px;
+      }
+
+      .header-nav {
+        gap: 16px;
+      }
+
+      .header-nav a {
+        font-size: 14px;
+      }
+
+      .header-cta {
+        padding: 8px 18px;
+        font-size: 12px;
+        margin-left: 8px;
       }
 
       .hero-card__title {
@@ -1255,7 +1345,50 @@
       }
     }
 
+    @media screen and (max-width: 1100px) {
+      .header-contacts .icon-social {
+        display: none !important;
+      }
+    }
+
+    @media screen and (max-width: 1024px) {
+      .header-inner {
+        padding: 0 12px;
+        gap: 12px;
+      }
+
+      .header-logo {
+        font-size: 24px;
+      }
+
+      .header-nav {
+        gap: 12px;
+      }
+
+      .header-nav a {
+        font-size: 13px;
+      }
+
+      .header-cta {
+        padding: 8px 14px;
+        font-size: 11px;
+        margin-left: 4px;
+      }
+
+      .header-contacts {
+        gap: 8px;
+      }
+    }
+
     @media screen and (max-width: 959px) {
+      .header-logo {
+        font-size: 26px;
+      }
+
+      .header-contacts {
+        display: none !important;
+      }
+
       .header-nav {
         display: none;
       }
@@ -1267,6 +1400,61 @@
       .header-burger {
         display: flex;
       }
+
+      .header-nav.is-open {
+        display: flex !important;
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #ffffff;
+        padding: 40px 24px;
+        gap: 24px;
+        z-index: 99;
+        align-items: flex-start;
+      }
+
+      .header-nav.is-open a {
+        font-size: 24px !important;
+        font-weight: 500;
+      }
+
+      /* ===== MOBILE ONLY CONTACTS ===== */
+      .mobile-only-contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: auto;
+        padding-top: 24px;
+        border-top: 1px solid #e8e8e8;
+        width: 100%;
+      }
+
+      .mobile-phone {
+        font-size: 20px;
+        font-weight: 500;
+        color: #000000;
+        text-decoration: none;
+      }
+
+      .mobile-socials {
+        display: flex;
+        gap: 12px;
+      }
+
+      .mobile-socials .icon-social {
+        width: 36px;
+        height: 36px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: block;
+      }
+    }
+
+    @media screen and (max-width: 959px) {
 
       .hero-card {
         min-height: 420px;
@@ -1515,60 +1703,701 @@
         scroll-behavior: auto !important;
       }
     }
-  
-    /* ===== MOBILE NAV DRAWER & BURGER CROSS ===== */
-    .header-burger {
-      display: none;
-      width: 28px;
-      height: 20px;
-      flex-direction: column;
-      justify-content: space-between;
+
+    /* ============================================================
+       HEADER CTA BUTTON
+       ============================================================ */
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      background: #000000;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 500;
+      border-radius: 100px;
+      transition: background 0.2s ease, transform 0.2s ease,
+                  padding 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+                  margin 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+                  font-size 0.5s cubic-bezier(0.25, 1, 0.5, 1);
       cursor: pointer;
-      background: none;
-      border: none;
-      padding: 0;
+      white-space: nowrap;
+      text-decoration: none;
+      flex-shrink: 0;
+      margin-left: 16px;
     }
 
-    .header-burger span {
-      display: block;
+    .header-cta:hover {
+      background: #333333;
+      transform: translateY(-1px);
+      color: #ffffff;
+    }
+
+    .header-cta svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    /* ============================================================
+       FAQ ACCORDION
+       ============================================================ */
+    .faq {
+      padding: 100px 0;
+      background: #ffffff;
+    }
+
+    .faq__title {
+      font-size: 48px;
+      font-weight: 500;
+      line-height: 1.15;
+      color: #000000;
+      margin-bottom: 48px;
+    }
+
+    .faq-list {
+      max-width: 900px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .faq-item__question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       width: 100%;
-      height: 2px;
-      background: #000;
-      transition: transform 0.3s ease, opacity 0.3s ease;
+      padding: 24px 0;
+      background: transparent;
+      font-size: 18px;
+      font-weight: 500;
+      color: #000000;
+      text-align: left;
+      cursor: pointer;
+      line-height: 1.4;
+      gap: 20px;
+      transition: color 0.2s ease;
     }
 
-    .header-burger.is-active span:nth-child(1) {
-      transform: translateY(9px) rotate(45deg);
+    .faq-item__question:hover {
+      color: #5d5d5d;
     }
-    .header-burger.is-active span:nth-child(2) {
-      opacity: 0;
+
+    .faq-item__icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
     }
-    .header-burger.is-active span:nth-child(3) {
-      transform: translateY(-9px) rotate(-45deg);
+
+    .faq-item__icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: #aaaaaa;
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .faq-item.is-open .faq-item__icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-item__answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 0 0 0;
+    }
+
+    .faq-item.is-open .faq-item__answer {
+      max-height: 400px;
+      padding: 0 0 24px 0;
+    }
+
+    .faq-item__answer p {
+      font-size: 15px;
+      font-weight: 400;
+      color: #5d5d5d;
+      line-height: 1.65;
+      max-width: 720px;
+    }
+
+    /* ============================================================
+       B2B CTA BLOCK
+       ============================================================ */
+    .b2b-cta {
+      padding: 0 0 100px;
+      background: #ffffff;
+    }
+
+    .b2b-cta__inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: #000000;
+      border-radius: 20px;
+      padding: 64px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .b2b-cta__text {
+      max-width: 600px;
+    }
+
+    .b2b-cta__label {
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+    }
+
+    .b2b-cta__title {
+      font-size: 32px;
+      font-weight: 500;
+      color: #ffffff;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .b2b-cta__desc {
+      font-size: 15px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.55;
+    }
+
+    .b2b-cta__btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      background: #ffffff;
+      color: #000000;
+      font-size: 15px;
+      font-weight: 500;
+      border-radius: 100px;
+      transition: background 0.2s ease, transform 0.2s ease;
+      cursor: pointer;
+      text-decoration: none;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    .b2b-cta__btn:hover {
+      background: #f2f2f2;
+      transform: translateY(-1px);
+      color: #000000;
+    }
+
+    .b2b-cta__btn svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    /* ============================================================
+       POPUP CALCULATOR
+       ============================================================ */
+    .calc-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .calc-overlay.is-open {
+      display: flex;
+    }
+
+    .calc-popup {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 48px;
+      width: 100%;
+      max-width: 560px;
+      position: relative;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .calc-popup__close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 32px;
+      height: 32px;
+      background: #f2f2f2;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+    }
+
+    .calc-popup__close:hover {
+      background: #e0e0e0;
+    }
+
+    .calc-popup__close svg {
+      width: 14px;
+      height: 14px;
+      stroke: #000000;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .calc-popup__title {
+      font-size: 28px;
+      font-weight: 500;
+      color: #000000;
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+
+    .calc-popup__subtitle {
+      font-size: 14px;
+      color: #5d5d5d;
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
+
+    .calc-product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .calc-product-btn {
+      padding: 12px 8px;
+      font-size: 13px;
+      font-weight: 500;
+      background: #f7f7f7;
+      border: 2px solid transparent;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: border-color 0.2s ease, background 0.2s ease;
+      text-align: center;
+      color: #000000;
+      font-family: inherit;
+    }
+
+    .calc-product-btn:hover {
+      background: #f0f0f0;
+    }
+
+    .calc-product-btn.is-selected {
+      border-color: #000000;
+      background: #ffffff;
+    }
+
+    .calc-form .form-group {
+      margin-bottom: 16px;
+    }
+
+    .calc-form .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      color: #aaaaaa;
+      margin-bottom: 6px;
+    }
+
+    .calc-form .form-group input,
+    .calc-form .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: none;
+      border-bottom: 1px solid #d9d9d9;
+      background: transparent;
+      font-size: 15px;
+      color: #000000;
+      transition: border-color 0.2s ease;
+      outline: none;
+      border-radius: 0;
+      font-family: inherit;
+    }
+
+    .calc-form .form-group input:focus,
+    .calc-form .form-group textarea:focus {
+      border-color: #000000;
+    }
+
+    .calc-form .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .calc-form .btn-submit-calc {
+      width: 100%;
+      padding: 16px 32px;
+      background: #000000;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 500;
+      border-radius: 12px;
+      transition: background 0.2s ease, transform 0.2s ease;
+      margin-top: 8px;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .calc-form .btn-submit-calc:hover {
+      background: #333333;
+      transform: translateY(-1px);
+    }
+
+    /* ============================================================
+       PARTNER CARD LOGOS
+       ============================================================ */
+    .partner-card__logo {
+      font-size: 11px;
+      font-weight: 600;
+      color: #cccccc;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-top: auto;
+      padding-top: 12px;
+    }
+
+    /* ============================================================
+       NEW BLOCKS RESPONSIVE
+       ============================================================ */
+    @media screen and (max-width: 959px) {
+      .b2b-cta__inner {
+        flex-direction: column;
+        padding: 48px 36px;
+        text-align: center;
+      }
+
+      .b2b-cta__title {
+        font-size: 26px;
+      }
+
+      .faq__title {
+        font-size: 40px;
+      }
+
+      .calc-popup {
+        padding: 36px 24px;
+      }
+
+      .calc-product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media screen and (max-width: 639px) {
+      .faq__title {
+        font-size: 32px;
+      }
+
+      .faq-item__question {
+        font-size: 16px;
+      }
+
+      .b2b-cta__inner {
+        padding: 36px 24px;
+      }
+
+      .b2b-cta__title {
+        font-size: 22px;
+      }
+
+      .calc-product-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media screen and (max-width: 479px) {
+      .faq__title {
+        font-size: 28px;
+      }
+    }
+
+    /* ===== NAV DROPDOWN ===== */
+    .nav-item-has-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .nav-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ffffff;
+      border: 1px solid var(--color-border-light, #e8e8e8);
+      border-radius: var(--radius-sm, 12px);
+      padding: 16px;
+      min-width: 220px;
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+      margin-top: 10px;
+      z-index: 110;
+    }
+
+    .nav-dropdown::before {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 6px solid transparent;
+      border-bottom-color: #ffffff;
+    }
+
+    .nav-dropdown::after {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      right: 0;
+      height: 12px;
+    }
+
+    .nav-dropdown a {
+      font-size: 14px !important;
+      font-weight: 400 !important;
+      color: var(--color-secondary, #5d5d5d) !important;
+      transition: color var(--transition-fast, 0.2s ease) !important;
+      text-align: left;
+    }
+
+    .nav-dropdown a:hover {
+      color: var(--color-primary, #000000) !important;
+    }
+
+    /* Show on hover for desktop with smooth transition */
+    @media screen and (min-width: 960px) {
+      .nav-dropdown {
+        display: flex !important;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-50%) translateY(10px) scale(0.95);
+        transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+                    transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+                    visibility 0.3s;
+        pointer-events: none;
+      }
+
+      .nav-item-has-dropdown:hover .nav-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0) scale(1);
+        pointer-events: auto;
+      }
     }
 
     @media screen and (max-width: 959px) {
+      .nav-dropdown {
+        display: none !important;
+      }
+    }
+
+    /* ===== SCROLLED FLOATING HEADER (DESKTOP) ===== */
+    @media screen and (min-width: 960px) {
+      .site-header {
+        transition: background-color 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                    height 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                    border-bottom 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+      
+      .header-inner {
+        transition: max-width 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                    background-color 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                    border-radius 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                    border 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                    box-shadow 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                    height 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                    padding 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+                    margin-top 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+                    transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      .header-logo {
+        transition: font-size 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+                    letter-spacing 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      .header-nav {
+        transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                    max-width 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                    transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                    visibility 0.4s;
+        display: flex;
+        overflow: hidden;
+      }
+
+      /* Base prepare for desktop scrolled burger */
       .header-burger {
+        opacity: 0;
+        transform: scale(0.8) rotate(-30deg);
+        transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+                    transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+                    background-color 0.2s ease;
+      }
+
+      /* When scrolled */
+      .site-header--scrolled {
+        background: transparent !important;
+        border-bottom: none !important;
+        height: 85px !important;
+      }
+
+      .site-header--scrolled .header-inner {
+        background: rgba(255, 255, 255, 0.85) !important;
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid rgba(0, 0, 0, 0.08) !important;
+        border-radius: 40px !important;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08) !important;
+        height: 60px !important;
+        max-width: 560px !important; /* fit logo, burger, contacts */
+        padding: 0 20px !important; /* balanced padding */
+        margin-top: 12px !important;
+        gap: 12px !important; /* tighter gap when scrolled */
+      }
+
+      /* Hover interaction for scrolled capsule */
+      .site-header--scrolled .header-inner:hover {
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12) !important;
+        transform: translateY(-2px) !important;
+        background: rgba(255, 255, 255, 0.92) !important;
+        border-color: rgba(0, 0, 0, 0.12) !important;
+      }
+
+      .site-header--scrolled .header-logo {
+        font-size: 24px; /* slightly smaller logo */
+      }
+
+      .site-header--scrolled .header-nav {
+        position: absolute !important;
+        opacity: 0 !important;
+        max-width: 0 !important;
+        transform: scale(0.9) translateX(-15px) !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        gap: 10px !important; /* compact link gaps when scrolled */
+      }
+
+      .site-header--scrolled .header-nav a {
+        font-size: 14px !important; /* premium small size */
+      }
+
+      .site-header--scrolled .header-burger {
         display: flex !important;
+        opacity: 1 !important;
+        transform: scale(1) rotate(0deg);
+        flex-shrink: 0 !important;
       }
-      .header-nav.is-open {
-        display: flex !important;
-        flex-direction: column;
-        position: fixed;
-        top: 60px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: #ffffff;
-        padding: 40px 20px;
-        gap: 24px;
-        z-index: 99;
-        align-items: flex-start;
+
+      /* Ensure social icons are visible in scrolled header by default */
+      .site-header--scrolled .header-contacts .icon-social {
+        display: inline-block !important;
+        max-width: 30px !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        transition: max-width 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+                    opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1);
       }
-      .header-nav.is-open a {
-        font-size: 24px !important;
-        font-weight: 500;
+
+      /* Hide social icons in expanded scrolled state on smaller screens to prevent overflow */
+      @media screen and (max-width: 1099px) {
+        .site-header--scrolled.site-header--expanded .header-contacts .icon-social {
+          max-width: 0 !important;
+          opacity: 0 !important;
+          pointer-events: none !important;
+          margin: 0 !important;
+        }
       }
+
+      .site-header--scrolled .header-contacts .header-phone {
+        font-size: 14.5px !important; /* slightly larger and more visible */
+        font-weight: 600 !important; /* slightly bolder for emphasis */
+        letter-spacing: -0.01em !important;
+      }
+
+      /* Responsive rules for scrolled CTA button to avoid overflow */
+      .site-header--scrolled:not(.site-header--expanded) .header-cta {
+        display: none !important;
+      }
+
+      @media screen and (max-width: 1199px) {
+        .site-header--scrolled .header-cta {
+          display: none !important;
+        }
+      }
+
+      /* Soft micro-transitions for items in navigation */
+      .site-header--scrolled .header-nav > a,
+      .site-header--scrolled .header-nav > .nav-item-has-dropdown {
+        opacity: 0;
+        transform: translateY(8px) scale(0.95);
+        transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+                    transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      /* When scrolled and expanded (burger clicked) */
+      .site-header--scrolled.site-header--expanded .header-inner {
+        max-width: 1280px !important; /* expanded to fit menu links inline */
+        border-radius: 40px !important;
+      }
+
+      @media screen and (max-width: 1320px) {
+        .site-header--scrolled.site-header--expanded .header-inner {
+          max-width: calc(100% - 40px) !important;
+        }
+      }
+
+      .site-header--scrolled.site-header--expanded .header-nav {
+        position: relative !important;
+        opacity: 1 !important;
+        max-width: 700px !important; /* open width to show links */
+        transform: scale(1) translateX(0) !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        margin-left: 16px;
+        margin-right: 16px;
+        overflow: visible !important; /* allow dropdowns to display */
+      }
+
+      .site-header--scrolled.site-header--expanded .header-nav > a,
+      .site-header--scrolled.site-header--expanded .header-nav > .nav-item-has-dropdown {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+                    transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      /* Staggered delay for navigation items animation */
+      .site-header--scrolled.site-header--expanded .header-nav > *:nth-child(1) { transition-delay: 0.05s; }
+      .site-header--scrolled.site-header--expanded .header-nav > *:nth-child(2) { transition-delay: 0.09s; }
+      .site-header--scrolled.site-header--expanded .header-nav > *:nth-child(3) { transition-delay: 0.13s; }
+      .site-header--scrolled.site-header--expanded .header-nav > *:nth-child(4) { transition-delay: 0.17s; }
+      .site-header--scrolled.site-header--expanded .header-nav > *:nth-child(5) { transition-delay: 0.21s; }
+      .site-header--scrolled.site-header--expanded .header-nav > *:nth-child(6) { transition-delay: 0.25s; }
     }
   </style>
 </head>
@@ -1584,12 +2413,41 @@
         <a href="/">CORSTAR</a>
       </div>
       <nav class="header-nav" id="main-nav" aria-label="Основная навигация">
-        <a href="/izdeliya/">Изделия</a>
+        <div class="nav-item-has-dropdown">
+          <a href="/izdeliya/">Изделия</a>
+          <div class="nav-dropdown">
+            <a href="/izdeliya/#stoleshnitsi">Столешницы</a>
+            <a href="/izdeliya/#podokonniki">Подоконники</a>
+            <a href="/izdeliya/#mojki">Мойки и раковины</a>
+            <a href="/izdeliya/#vanni">Ванны</a>
+            <a href="/izdeliya/#stupeni">Ступени</a>
+          </div>
+        </div>
         <a href="/catalog-kamnya/">Каталог камня</a>
         <a href="/portfolio/">Портфолио</a>
         <a href="/partneram/">Партнерам</a>
-        <a href="/o-kompanii/">О компании</a>
+        <div class="nav-item-has-dropdown">
+          <a href="/o-kompanii/">О компании</a>
+          <div class="nav-dropdown">
+            <a href="/o-kompanii/#about">О нас</a>
+            <a href="/o-kompanii/#production">Производство</a>
+            <a href="/o-kompanii/#partners">Партнёры</a>
+          </div>
+        </div>
         <a href="/kontakty/">Контакты</a>
+
+        <!-- Mobile-only contacts inside drawer -->
+        <div class="mobile-only-contacts">
+          <a href="tel:+79999999999" class="mobile-phone">+7 (999) 999-99-99</a>
+          <div class="mobile-socials">
+            <a href="https://t.me/" class="icon-social"
+              style="background-image:url('images/tild3336-3233-4061-b363-653764393262__image.png')"
+              aria-label="Telegram"></a>
+            <a href="https://wa.me/" class="icon-social"
+              style="background-image:url('images/tild6330-3839-4263-b533-323737306437__image.png')"
+              aria-label="WhatsApp"></a>
+          </div>
+        </div>
       </nav>
       <div class="header-contacts">
         <a href="https://t.me/" class="icon-social"
@@ -1598,7 +2456,11 @@
         <a href="https://wa.me/" class="icon-social"
           style="background-image:url('images/tild6330-3839-4263-b533-323737306437__image.png')"
           aria-label="WhatsApp"></a>
-        <a href="tel:+14153928476" class="header-phone">+1 (415) 392-8476</a>
+        <a href="tel:+79999999999" class="header-phone">+7 (999) 999-99-99</a>
+        <a href="#" class="header-cta" id="btn-open-calc">
+          Заказать расчёт
+          <svg viewBox="0 0 24 24"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
       </div>
       <button class="header-burger" aria-label="Открыть меню" id="burger-toggle">
         <span></span>
@@ -1607,6 +2469,9 @@
       </button>
     </div>
   </header>
+
+  <!-- Mobile nav backdrop -->
+  <div class="mobile-nav-backdrop" id="mobile-backdrop"></div>
 
   <main>
 
@@ -1617,9 +2482,8 @@
       <div class="container">
         <div class="hero-card">
           <div class="hero-card__bg">
-            <img src="images/hero_home.png"
-              alt="Кухонный остров из тёмного искусственного камня — производство CORSTAR" loading="eager"
-              fetchpriority="high" />
+            <img src="images/hero_home.png" alt="Кухонный остров из тёмного искусственного камня — производство CORSTAR"
+              loading="eager" fetchpriority="high" />
           </div>
           <div class="hero-card__overlay"></div>
           <div class="hero-card__content">
@@ -1627,15 +2491,24 @@
               <h1 class="hero-card__title">Изготовление и&nbsp;монтаж изделий из&nbsp;искусственного камня</h1>
               <div class="hero-card__meta">
                 <span class="hero-card__tag">
-                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" /><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></svg>
+                  <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="3" />
+                    <path
+                      d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                  </svg>
                   Акрил
                 </span>
                 <span class="hero-card__tag">
-                  <svg viewBox="0 0 24 24"><path d="M18.364 5.636a9 9 0 11-12.728 0" /><line x1="12" y1="2" x2="12" y2="12" /></svg>
+                  <svg viewBox="0 0 24 24">
+                    <path d="M18.364 5.636a9 9 0 11-12.728 0" />
+                    <line x1="12" y1="2" x2="12" y2="12" />
+                  </svg>
                   Кварц
                 </span>
                 <span class="hero-card__tag">
-                  <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
                   Гарантия 12 месяцев
                 </span>
               </div>
@@ -1647,12 +2520,18 @@
                 </div>
                 <span class="hero-floating__text">Узнать стоимость изделия</span>
                 <span class="hero-floating__arrow">
-                  <svg viewBox="0 0 24 24"><path d="M7 17L17 7" /><path d="M7 7h10v10" /></svg>
+                  <svg viewBox="0 0 24 24">
+                    <path d="M7 17L17 7" />
+                    <path d="M7 7h10v10" />
+                  </svg>
                 </span>
               </a>
               <a href="/partneram/" class="hero-floating__partner" id="hero-cta-partner">
                 <span class="hero-floating__partner-text">Для партнеров</span>
-                <svg viewBox="0 0 24 24"><path d="M5 12h14" /><path d="M12 5l7 7-7 7" /></svg>
+                <svg viewBox="0 0 24 24">
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" />
+                </svg>
               </a>
             </div>
           </div>
@@ -1667,17 +2546,20 @@
       <div class="container">
         <div class="categories-grid">
           <a href="/izdeliya/#stupeni" class="category-card" id="cat-stupeni">
-            <div class="category-card__bg"><img src="images/cat_stupeni.png" alt="Ступени и перила из камня" loading="lazy" /></div>
+            <div class="category-card__bg"><img src="images/cat_stupeni.png" alt="Ступени и перила из камня"
+                loading="lazy" /></div>
             <div class="category-card__overlay"></div>
             <span class="category-card__label">Ступени и перила</span>
           </a>
           <a href="/izdeliya/#stoleshnitsy" class="category-card" id="cat-stoleshnitsy">
-            <div class="category-card__bg"><img src="images/cat_stoleshnitsy.png" alt="Столешницы из камня" loading="lazy" /></div>
+            <div class="category-card__bg"><img src="images/cat_stoleshnitsy.png" alt="Столешницы из камня"
+                loading="lazy" /></div>
             <div class="category-card__overlay"></div>
             <span class="category-card__label">Столешницы</span>
           </a>
           <a href="/izdeliya/#podokonniki" class="category-card" id="cat-podokonniki">
-            <div class="category-card__bg"><img src="images/cat_podokonniki.png" alt="Подоконники из камня" loading="lazy" /></div>
+            <div class="category-card__bg"><img src="images/cat_podokonniki.png" alt="Подоконники из камня"
+                loading="lazy" /></div>
             <div class="category-card__overlay"></div>
             <span class="category-card__label">Подоконники</span>
           </a>
@@ -1692,7 +2574,8 @@
             <span class="category-card__label">Мойки</span>
           </a>
           <a href="/izdeliya/#individualno" class="category-card" id="cat-individualno">
-            <div class="category-card__bg"><img src="images/cat_individualno.png" alt="Дизайнерские решения из камня" loading="lazy" /></div>
+            <div class="category-card__bg"><img src="images/cat_individualno.png" alt="Дизайнерские решения из камня"
+                loading="lazy" /></div>
             <div class="category-card__overlay"></div>
             <span class="category-card__label">Дизайнерские решения</span>
           </a>
@@ -1711,25 +2594,29 @@
             <div class="process-step__number">01</div>
             <div class="process-step__label">Шаг 01</div>
             <h3 class="process-step__name">Заявка</h3>
-            <p class="process-step__text">Оставляете заявку на сайте или&nbsp;звоните — мы свяжемся с&nbsp;вами в&nbsp;течение 15 минут.</p>
+            <p class="process-step__text">Оставляете заявку на сайте или&nbsp;звоните — мы свяжемся с&nbsp;вами
+              в&nbsp;течение 15 минут.</p>
           </div>
           <div class="process-step" id="step-zamer">
             <div class="process-step__number">02</div>
             <div class="process-step__label">Шаг 02</div>
             <h3 class="process-step__name">Замер</h3>
-            <p class="process-step__text">Точный замер на объекте. Подбор материалов, расчёт стоимости и&nbsp;сроков.</p>
+            <p class="process-step__text">Точный замер на объекте. Подбор материалов, расчёт стоимости и&nbsp;сроков.
+            </p>
           </div>
           <div class="process-step" id="step-production">
             <div class="process-step__number">03</div>
             <div class="process-step__label">Шаг 03</div>
             <h3 class="process-step__name">Производство</h3>
-            <p class="process-step__text">Изготовление в&nbsp;собственном цехе с&nbsp;использованием высокоточного оборудования и&nbsp;контролем качества.</p>
+            <p class="process-step__text">Изготовление в&nbsp;собственном цехе с&nbsp;использованием высокоточного
+              оборудования и&nbsp;контролем качества.</p>
           </div>
           <div class="process-step" id="step-montazh">
             <div class="process-step__number">04</div>
             <div class="process-step__label">Шаг 04</div>
             <h3 class="process-step__name">Монтаж</h3>
-            <p class="process-step__text">Аккуратная, профессиональная установка. Бесшовная интеграция и&nbsp;полировка.</p>
+            <p class="process-step__text">Аккуратная, профессиональная установка. Бесшовная интеграция и&nbsp;полировка.
+            </p>
           </div>
         </div>
       </div>
@@ -1743,8 +2630,10 @@
         <div class="partners__header">
           <h2 class="partners__title">Наши партнёры</h2>
           <div class="partners__tabs" role="tablist" aria-label="Тип камня">
-            <button class="partners__tab partners__tab--active" role="tab" aria-selected="true" aria-controls="panel-acrylic" data-panel="acrylic" id="tab-acrylic">Акрил</button>
-            <button class="partners__tab" role="tab" aria-selected="false" aria-controls="panel-quartz" data-panel="quartz" id="tab-quartz">Кварц</button>
+            <button class="partners__tab partners__tab--active" role="tab" aria-selected="true"
+              aria-controls="panel-acrylic" data-panel="acrylic" id="tab-acrylic">Акрил</button>
+            <button class="partners__tab" role="tab" aria-selected="false" aria-controls="panel-quartz"
+              data-panel="quartz" id="tab-quartz">Кварц</button>
           </div>
         </div>
         <div class="partners__sep"></div>
@@ -1752,28 +2641,76 @@
         <!-- Acrylic panel -->
         <div class="partners__panel partners__panel--active" id="panel-acrylic" role="tabpanel">
           <div class="partners__grid">
-            <div class="partner-card"><span class="partner-card__dot"></span><div class="partner-card__brand">STARON</div><div class="partner-card__company">SAMSUNG</div></div>
-            <div class="partner-card"><span class="partner-card__dot"></span><div class="partner-card__brand">TEMPEST</div><div class="partner-card__company">SAMSUNG</div></div>
-            <div class="partner-card"><span class="partner-card__dot"></span><div class="partner-card__brand">CORIAN</div><div class="partner-card__company">DU PONT</div></div>
-            <div class="partner-card"><span class="partner-card__dot"></span><div class="partner-card__brand">MONTELLI</div><div class="partner-card__company">DU PONT</div></div>
-            <div class="partner-card"><span class="partner-card__dot"></span><div class="partner-card__brand">HANEX</div><div class="partner-card__company">Acrylic SOLID SURFACE</div></div>
-            <div class="partner-card"><span class="partner-card__dot"></span><div class="partner-card__brand">TRISTONE</div><div class="partner-card__company">Acrylic SOLID SURFACE</div></div>
-            <div class="partner-card"><span class="partner-card__dot"></span><div class="partner-card__brand">HI-MACS</div><div class="partner-card__company">LG</div></div>
-            <div class="partner-card"><span class="partner-card__dot"></span><div class="partner-card__brand">GRANDEX</div><div class="partner-card__company">Lion ChemTech</div></div>
+            <div class="partner-card"><span class="partner-card__dot"></span>
+              <div class="partner-card__brand">STARON</div>
+              <div class="partner-card__company">SAMSUNG</div>
+            </div>
+            <div class="partner-card"><span class="partner-card__dot"></span>
+              <div class="partner-card__brand">TEMPEST</div>
+              <div class="partner-card__company">SAMSUNG</div>
+            </div>
+            <div class="partner-card"><span class="partner-card__dot"></span>
+              <div class="partner-card__brand">CORIAN</div>
+              <div class="partner-card__company">DU PONT</div>
+            </div>
+            <div class="partner-card"><span class="partner-card__dot"></span>
+              <div class="partner-card__brand">MONTELLI</div>
+              <div class="partner-card__company">DU PONT</div>
+            </div>
+            <div class="partner-card"><span class="partner-card__dot"></span>
+              <div class="partner-card__brand">HANEX</div>
+              <div class="partner-card__company">Acrylic SOLID SURFACE</div>
+            </div>
+            <div class="partner-card"><span class="partner-card__dot"></span>
+              <div class="partner-card__brand">TRISTONE</div>
+              <div class="partner-card__company">Acrylic SOLID SURFACE</div>
+            </div>
+            <div class="partner-card"><span class="partner-card__dot"></span>
+              <div class="partner-card__brand">HI-MACS</div>
+              <div class="partner-card__company">LG</div>
+            </div>
+            <div class="partner-card"><span class="partner-card__dot"></span>
+              <div class="partner-card__brand">GRANDEX</div>
+              <div class="partner-card__company">Lion ChemTech</div>
+            </div>
           </div>
         </div>
 
         <!-- Quartz panel -->
         <div class="partners__panel" id="panel-quartz" role="tabpanel">
           <div class="partners__grid">
-            <div class="partner-card"><span class="partner-card__dot"></span><div class="partner-card__brand">RADIANZ</div><div class="partner-card__company">SAMSUNG</div></div>
-            <div class="partner-card"><span class="partner-card__dot"></span><div class="partner-card__brand">SILESTONE</div><div class="partner-card__company">COSENTINO</div></div>
-            <div class="partner-card"><span class="partner-card__dot"></span><div class="partner-card__brand">TECHNISTONE</div><div class="partner-card__company">HIGH PERFORMANCE QUARTZ</div></div>
-            <div class="partner-card"><span class="partner-card__dot"></span><div class="partner-card__brand">CAESARSTONE</div><div class="partner-card__company">QUARTZ SURFACES</div></div>
-            <div class="partner-card"><span class="partner-card__dot"></span><div class="partner-card__brand">VICOSTONE</div><div class="partner-card__company">Quartz SURFACE</div></div>
-            <div class="partner-card"><span class="partner-card__dot"></span><div class="partner-card__brand">CAMBRIA</div><div class="partner-card__company">QUARTZ SURFACE</div></div>
-            <div class="partner-card"><span class="partner-card__dot"></span><div class="partner-card__brand">AVANT</div><div class="partner-card__company">Quartz</div></div>
-            <div class="partner-card"><span class="partner-card__dot"></span><div class="partner-card__brand">SCORINO</div><div class="partner-card__company">QUARTZ SURFACE</div></div>
+            <div class="partner-card"><span class="partner-card__dot"></span>
+              <div class="partner-card__brand">RADIANZ</div>
+              <div class="partner-card__company">SAMSUNG</div>
+            </div>
+            <div class="partner-card"><span class="partner-card__dot"></span>
+              <div class="partner-card__brand">SILESTONE</div>
+              <div class="partner-card__company">COSENTINO</div>
+            </div>
+            <div class="partner-card"><span class="partner-card__dot"></span>
+              <div class="partner-card__brand">TECHNISTONE</div>
+              <div class="partner-card__company">HIGH PERFORMANCE QUARTZ</div>
+            </div>
+            <div class="partner-card"><span class="partner-card__dot"></span>
+              <div class="partner-card__brand">CAESARSTONE</div>
+              <div class="partner-card__company">QUARTZ SURFACES</div>
+            </div>
+            <div class="partner-card"><span class="partner-card__dot"></span>
+              <div class="partner-card__brand">VICOSTONE</div>
+              <div class="partner-card__company">Quartz SURFACE</div>
+            </div>
+            <div class="partner-card"><span class="partner-card__dot"></span>
+              <div class="partner-card__brand">CAMBRIA</div>
+              <div class="partner-card__company">QUARTZ SURFACE</div>
+            </div>
+            <div class="partner-card"><span class="partner-card__dot"></span>
+              <div class="partner-card__brand">AVANT</div>
+              <div class="partner-card__company">Quartz</div>
+            </div>
+            <div class="partner-card"><span class="partner-card__dot"></span>
+              <div class="partner-card__brand">SCORINO</div>
+              <div class="partner-card__company">QUARTZ SURFACE</div>
+            </div>
           </div>
         </div>
 
@@ -1794,15 +2731,22 @@
 
           <div class="reason-card" id="reason-own">
             <div class="reason-card__icon">
-              <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" /><path d="M9 22V12h6v10" /></svg>
+              <svg viewBox="0 0 24 24">
+                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                <path d="M9 22V12h6v10" />
+              </svg>
             </div>
             <h3 class="reason-card__title">Собственное производство</h3>
-            <p class="reason-card__text">Свой цех с профессиональным оборудованием. Контроль качества на каждом этапе изготовления.</p>
+            <p class="reason-card__text">Свой цех с профессиональным оборудованием. Контроль качества на каждом этапе
+              изготовления.</p>
           </div>
 
           <div class="reason-card" id="reason-experience">
             <div class="reason-card__icon">
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg>
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg>
             </div>
             <h3 class="reason-card__title">Опыт 23+ лет</h3>
             <p class="reason-card__text">Более 3000 выполненных и смонтированных объектов по всему региону.</p>
@@ -1810,31 +2754,44 @@
 
           <div class="reason-card" id="reason-warranty">
             <div class="reason-card__icon">
-              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+              <svg viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
             </div>
-            <h3 class="reason-card__title">Гарантия 3 года</h3>
-            <p class="reason-card__text">Официальная гарантия по договору на готовые изделия и монтажные работы.</p>
+            <h3 class="reason-card__title">Гарантия 12 месяцев</h3>
+            <p class="reason-card__text">Официальная гарантия 12 месяцев по договору на готовые изделия и монтажные работы.</p>
           </div>
 
           <div class="reason-card" id="reason-speed">
             <div class="reason-card__icon">
-              <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>
+              <svg viewBox="0 0 24 24">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg>
             </div>
             <h3 class="reason-card__title">Быстрые сроки</h3>
-            <p class="reason-card__text">Изготовление от 5 рабочих дней. Бесплатный выезд замер в&nbsp;день обращения.</p>
+            <p class="reason-card__text">Изготовление от 5 рабочих дней. Бесплатный выезд замер в&nbsp;день обращения.
+            </p>
           </div>
 
           <div class="reason-card" id="reason-complexity">
             <div class="reason-card__icon">
-              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" /></svg>
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                <path d="M2 17l10 5 10-5" />
+                <path d="M2 12l10 5 10-5" />
+              </svg>
             </div>
             <h3 class="reason-card__title">Любая сложность</h3>
-            <p class="reason-card__text">Берёмся за нестандартные и&nbsp;криволинейные формы, клеим интегрированные мойки.</p>
+            <p class="reason-card__text">Берёмся за нестандартные и&nbsp;криволинейные формы, клеим интегрированные
+              мойки.</p>
           </div>
 
           <div class="reason-card" id="reason-price">
             <div class="reason-card__icon">
-              <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" /></svg>
+              <svg viewBox="0 0 24 24">
+                <line x1="12" y1="1" x2="12" y2="23" />
+                <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+              </svg>
             </div>
             <h3 class="reason-card__title">Фиксированная цена</h3>
             <p class="reason-card__text">Итоговая смета утверждается до начала работ и&nbsp;не меняется.</p>
@@ -1842,7 +2799,12 @@
 
           <div class="reason-card" id="reason-designers">
             <div class="reason-card__icon">
-              <svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z" /><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" /><path d="M2 2l7.586 7.586" /><circle cx="11" cy="11" r="2" /></svg>
+              <svg viewBox="0 0 24 24">
+                <path d="M12 19l7-7 3 3-7 7-3-3z" />
+                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+                <path d="M2 2l7.586 7.586" />
+                <circle cx="11" cy="11" r="2" />
+              </svg>
             </div>
             <h3 class="reason-card__title">Работаем с&nbsp;дизайнерами</h3>
             <p class="reason-card__text">Рекомендуемые условия сотрудничества для дизайн-студий.</p>
@@ -1853,7 +2815,10 @@
             <div class="reason-cta__title">Готовы начать?</div>
             <a href="#contacts" class="reason-cta__btn" id="btn-discuss-project">
               Обсудить мой проект
-              <svg viewBox="0 0 24 24"><path d="M7 17L17 7" /><path d="M7 7h10v10" /></svg>
+              <svg viewBox="0 0 24 24">
+                <path d="M7 17L17 7" />
+                <path d="M7 7h10v10" />
+              </svg>
             </a>
           </div>
 
@@ -1872,8 +2837,9 @@
         </div>
         <div class="portfolio-layout">
           <div class="portfolio-main">
-            <img src="images/port_kitchen_marble.png" alt="Кухонный остров из мрамора — проект CORSTAR" loading="lazy" />
-            <span class="portfolio-main__label">Gallery item</span>
+            <img src="images/port_kitchen_marble.png" alt="Кухонный остров из мрамора — проект CORSTAR"
+              loading="lazy" />
+            <span class="portfolio-main__label">Кухня</span>
           </div>
           <div class="portfolio-side">
             <div class="portfolio-side__item">
@@ -1881,7 +2847,7 @@
             </div>
             <div class="portfolio-side__item">
               <img src="images/port_bathroom_stone.png" alt="Ванная комната из камня — проект CORSTAR" loading="lazy" />
-              <span class="portfolio-side__label">Gallery item</span>
+              <span class="portfolio-side__label">Ванная</span>
             </div>
           </div>
         </div>
@@ -1889,7 +2855,98 @@
     </section>
 
     <!-- ============================================================
-         8. CONTACT FORM (#contacts)
+         8. B2B CTA BLOCK
+         ============================================================ -->
+    <section class="b2b-cta" id="b2b-section">
+      <div class="container">
+        <div class="b2b-cta__inner">
+          <div class="b2b-cta__text">
+            <div class="b2b-cta__label">Для партнёров</div>
+            <h2 class="b2b-cta__title">Дизайнерам, архитекторам и&nbsp;мебельным студиям</h2>
+            <p class="b2b-cta__desc">Дилерские цены, приоритетное производство и&nbsp;маркетинговая поддержка. Уже сотрудничаем с&nbsp;50+ студиями Москвы.</p>
+          </div>
+          <a href="/partneram/" class="b2b-cta__btn" id="btn-b2b-partner">
+            Стать партнёром
+            <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         9. FAQ ACCORDION
+         ============================================================ -->
+    <section class="faq" id="faq-section">
+      <div class="container">
+        <h2 class="faq__title">Часто задаваемые вопросы</h2>
+        <div class="faq-list">
+
+          <div class="faq-item" id="faq-1">
+            <button class="faq-item__question" aria-expanded="false">
+              <span>Какие сроки изготовления изделий?</span>
+              <span class="faq-item__icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Стандартный срок изготовления — от&nbsp;5 до&nbsp;10 рабочих дней в&nbsp;зависимости от&nbsp;сложности изделия. Замер выполняется в&nbsp;день обращения или на&nbsp;следующий рабочий день. Монтаж занимает от&nbsp;2 до&nbsp;8 часов.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" id="faq-2">
+            <button class="faq-item__question" aria-expanded="false">
+              <span>Какая гарантия на изделия?</span>
+              <span class="faq-item__icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Мы предоставляем официальную гарантию 12&nbsp;месяцев по&nbsp;договору на&nbsp;все готовые изделия и&nbsp;монтажные работы. Гарантия распространяется на&nbsp;дефекты материала и&nbsp;качество сборки.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" id="faq-3">
+            <button class="faq-item__question" aria-expanded="false">
+              <span>Чем отличается акриловый камень от кварцевого?</span>
+              <span class="faq-item__icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Акриловый камень — пластичный, позволяет создавать бесшовные соединения и&nbsp;криволинейные формы. Легко реставрируется. Кварцевый агломерат — более твёрдый и&nbsp;термостойкий, устойчив к&nbsp;царапинам. Выбор зависит от&nbsp;задач: для кухонных столешниц чаще рекомендуем кварц, для ванных и&nbsp;моек — акрил.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" id="faq-4">
+            <button class="faq-item__question" aria-expanded="false">
+              <span>Как формируется стоимость изделия?</span>
+              <span class="faq-item__icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Стоимость зависит от&nbsp;выбранного камня, площади изделия, сложности формы и&nbsp;дополнительных опций (интегрированная мойка, фрезеровка, подсветка). Итоговая смета фиксируется в&nbsp;договоре и&nbsp;не&nbsp;меняется в&nbsp;процессе работы.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" id="faq-5">
+            <button class="faq-item__question" aria-expanded="false">
+              <span>Выполняете ли доставку и монтаж?</span>
+              <span class="faq-item__icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Да, мы&nbsp;выполняем полный цикл: замер, производство, доставку и&nbsp;профессиональный монтаж. Доставка по&nbsp;Москве включена в&nbsp;стоимость. Доставка в&nbsp;область рассчитывается индивидуально.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" id="faq-6">
+            <button class="faq-item__question" aria-expanded="false">
+              <span>Можно ли приехать посмотреть образцы камня?</span>
+              <span class="faq-item__icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Конечно! Приезжайте в&nbsp;наш офис по&nbsp;адресу: г.&nbsp;Москва, ул.&nbsp;Юных Ленинцев. У&nbsp;нас есть выставочный стенд с&nbsp;образцами более 500&nbsp;оттенков камня от&nbsp;всех партнёров. Предварительная запись не&nbsp;требуется.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         10. CONTACT FORM (#contacts)
          ============================================================ -->
     <section class="contact-section" id="contacts">
       <div class="container">
@@ -1897,18 +2954,29 @@
 
           <div class="contact-left">
             <div class="contact-left__label">Контакты</div>
-            <p class="contact-left__text">Оставьте заявку и мы позвоним вам в&nbsp;течении 24 часов или свяжитесь с&nbsp;нами сами по&nbsp;контактам:</p>
+            <p class="contact-left__text">Оставьте заявку и мы позвоним вам в&nbsp;течении 24 часов или свяжитесь
+              с&nbsp;нами сами по&nbsp;контактам:</p>
             <a href="mailto:hello.obtix@gmail.com" class="contact-left__email">hello.obtix@gmail.com</a>
-            <a href="tel:+14153928476" class="contact-left__phone">+1 (415) 392-8476</a>
+            <a href="tel:+79999999999" class="contact-left__phone">+7 (999) 999-99-99</a>
             <div class="contact-left__socials">
               <a href="https://t.me/" aria-label="Telegram">
-                <svg viewBox="0 0 24 24"><path d="M22 2L11 13" /><path d="M22 2l-7 20-4-9-9-4 20-7z" /></svg>
+                <svg viewBox="0 0 24 24">
+                  <path d="M22 2L11 13" />
+                  <path d="M22 2l-7 20-4-9-9-4 20-7z" />
+                </svg>
               </a>
               <a href="https://wa.me/" aria-label="WhatsApp">
-                <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" /></svg>
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+                </svg>
               </a>
               <a href="https://instagram.com/" aria-label="Instagram">
-                <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>
+                <svg viewBox="0 0 24 24">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
               </a>
             </div>
           </div>
@@ -1924,14 +2992,16 @@
               <div class="form-group">
                 <label for="input-home-phone">Ваш телефон</label>
                 <div class="phone-input-wrapper">
-                  <span class="phone-flag">🇷🇺 <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" /></svg></span>
-                  <input type="tel" id="input-home-phone" name="phone" placeholder="+48 00 0000-0000" required />
+                  <span class="phone-flag">🇷🇺 <svg viewBox="0 0 24 24">
+                      <path d="M6 9l6 6 6-6" />
+                    </svg></span>
+                  <input type="tel" id="input-home-phone" name="phone" placeholder="+7 (___) ___-__-__" required />
                 </div>
               </div>
               <div class="form-group">
                 <label for="input-home-project">Выберите цель обращения</label>
                 <select id="input-home-project" name="project_type">
-                  <option value="" disabled selected>Изготовление изделия</option>
+                  <option value="" disabled selected>Выберите тип изделия</option>
                   <option value="stoleshnitsa">Столешница</option>
                   <option value="mojka">Мойка</option>
                   <option value="podokonnik">Подоконник</option>
@@ -1942,7 +3012,9 @@
                 </select>
               </div>
               <button type="submit" class="btn-submit-home" id="btn-submit-home">Отправить</button>
-              <p class="form-privacy">Нажимая кнопку "Отправить" вы принимаете условия <a href="/privacy/">пользовательского соглашения</a> и&nbsp;соглашаетесь с&nbsp;обработкой персональных данных.</p>
+              <p class="form-privacy">Нажимая кнопку "Отправить" вы принимаете условия <a
+                  href="/privacy/">пользовательского соглашения</a> и&nbsp;соглашаетесь с&nbsp;обработкой персональных
+                данных.</p>
             </form>
           </div>
 
@@ -1960,7 +3032,8 @@
 
       <div class="footer-top">
         <div class="footer-logo">CORSTAR</div>
-        <div class="footer-cta">Ищете качественного подрядчика или компетентного партнера?<br><a href="/partneram/">Мы на связи!</a></div>
+        <div class="footer-cta">Ищете качественного подрядчика или компетентного партнера?<br><a href="/partneram/">Мы
+            на связи!</a></div>
       </div>
 
       <div class="footer-divider"></div>
@@ -1990,8 +3063,12 @@
           </div>
         </div>
         <div>
-          <div class="footer-col-label">&nbsp;</div>
-          <div class="footer-col-content">&nbsp;</div>
+          <div class="footer-col-label">Режим работы</div>
+          <div class="footer-col-content">
+            <span>Пн – Пт: 09:00 – 19:00</span>
+            <span>Сб: 10:00 – 16:00</span>
+            <span>Вс: Выходной</span>
+          </div>
         </div>
       </div>
 
@@ -2010,11 +3087,65 @@
   </footer>
 
   <!-- ============================================================
-       JS: Partner tabs + smooth scroll
+       POPUP CALCULATOR OVERLAY
+       ============================================================ -->
+  <div class="calc-overlay" id="calc-popup-overlay">
+    <div class="calc-popup" id="calculator-popup">
+      <button class="calc-popup__close" id="btn-close-calc" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="calc-popup__title">Расчёт стоимости</div>
+      <div class="calc-popup__subtitle">Выберите параметры, чтобы получить точный расчёт стоимости изделия в течение 15 минут.</div>
+      
+      <form class="calc-form" id="calculator-form">
+        <div class="form-group">
+          <label>Тип камня</label>
+          <div class="calc-product-grid" id="calc-stone-grid">
+            <button type="button" class="calc-product-btn is-selected" data-value="acrylic">Акриловый</button>
+            <button type="button" class="calc-product-btn" data-value="quartz">Кварцевый</button>
+          </div>
+          <input type="hidden" name="stone_type" id="calc-stone-val" value="acrylic" />
+        </div>
+        
+        <div class="form-group">
+          <label>Тип изделия</label>
+          <div class="calc-product-grid" id="calc-type-grid">
+            <button type="button" class="calc-product-btn is-selected" data-value="stoleshnitsa">Столешница</button>
+            <button type="button" class="calc-product-btn" data-value="mojka">Мойка</button>
+            <button type="button" class="calc-product-btn" data-value="podokonnik">Подоконник</button>
+            <button type="button" class="calc-product-btn" data-value="vanna">Ванна</button>
+            <button type="button" class="calc-product-btn" data-value="stupeni">Ступени</button>
+            <button type="button" class="calc-product-btn" data-value="other">Другое</button>
+          </div>
+          <input type="hidden" name="product_type" id="calc-type-val" value="stoleshnitsa" />
+        </div>
+
+        <div class="form-group">
+          <label for="calc-dim-length">Приблизительные размеры / длина</label>
+          <input type="text" id="calc-dim-length" name="length" placeholder="Например, 3 метра или 3000 мм" required />
+        </div>
+
+        <div class="form-group">
+          <label for="calc-name">Ваше имя</label>
+          <input type="text" id="calc-name" name="name" placeholder="Иван" required />
+        </div>
+
+        <div class="form-group">
+          <label for="calc-phone">Ваш телефон</label>
+          <input type="tel" id="calc-phone" name="phone" placeholder="+7 (___) ___-__-__" required />
+        </div>
+
+        <button type="submit" class="btn-submit-calc">Получить расчёт стоимости</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       JS Scripts
        ============================================================ -->
   <script>
-    /* ---- Partner Tabs ---- */
     (function () {
+      /* ---- Partner Tabs ---- */
       const tabs = document.querySelectorAll('.partners__tab');
       const panels = document.querySelectorAll('.partners__panel');
 
@@ -2038,6 +3169,197 @@
           }
         });
       });
+
+      /* ---- FAQ Accordion ---- */
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(function (item) {
+        const questionBtn = item.querySelector('.faq-item__question');
+        if (questionBtn) {
+          questionBtn.addEventListener('click', function () {
+            const isOpen = item.classList.contains('is-open');
+            // Close other items
+            faqItems.forEach(function (i) {
+              i.classList.remove('is-open');
+              const btn = i.querySelector('.faq-item__question');
+              if (btn) btn.setAttribute('aria-expanded', 'false');
+            });
+
+            if (!isOpen) {
+              item.classList.add('is-open');
+              questionBtn.setAttribute('aria-expanded', 'true');
+            }
+          });
+        }
+      });
+
+      /* ---- Calculator Popup Toggle ---- */
+      const calcOverlay = document.getElementById('calc-popup-overlay');
+      const openCalcBtns = [
+        document.getElementById('btn-open-calc'),
+        document.getElementById('hero-cta-catalog')
+      ];
+      const closeCalcBtn = document.getElementById('btn-close-calc');
+
+      openCalcBtns.forEach(function (btn) {
+        if (btn) {
+          btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            calcOverlay.classList.add('is-open');
+            document.body.style.overflow = 'hidden';
+          });
+        }
+      });
+
+      if (closeCalcBtn) {
+        closeCalcBtn.addEventListener('click', function () {
+          calcOverlay.classList.remove('is-open');
+          document.body.style.overflow = '';
+        });
+      }
+
+      if (calcOverlay) {
+        calcOverlay.addEventListener('click', function (e) {
+          if (e.target === calcOverlay) {
+            calcOverlay.classList.remove('is-open');
+            document.body.style.overflow = '';
+          }
+        });
+      }
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && calcOverlay && calcOverlay.classList.contains('is-open')) {
+          calcOverlay.classList.remove('is-open');
+          document.body.style.overflow = '';
+        }
+      });
+
+      /* ---- Calculator Form Grid Selections ---- */
+      function setupGridSelection(gridId, valId) {
+        const grid = document.getElementById(gridId);
+        const input = document.getElementById(valId);
+        if (grid && input) {
+          const btns = grid.querySelectorAll('.calc-product-btn');
+          btns.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              btns.forEach(b => b.classList.remove('is-selected'));
+              btn.classList.add('is-selected');
+              input.value = btn.getAttribute('data-value');
+            });
+          });
+        }
+      }
+      setupGridSelection('calc-stone-grid', 'calc-stone-val');
+      setupGridSelection('calc-type-grid', 'calc-type-val');
+
+      /* ---- Calculator Submit & Success UI ---- */
+      const calcForm = document.getElementById('calculator-form');
+      if (calcForm) {
+        calcForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const popup = document.getElementById('calculator-popup');
+          if (popup) {
+            popup.innerHTML = `
+              <button class="calc-popup__close" id="btn-close-calc" aria-label="Закрыть">
+                <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
+              <div style="text-align: center; padding: 48px 0;">
+                <div style="font-size: 56px; line-height: 1; margin-bottom: 24px; color: #000000;">✓</div>
+                <div class="calc-popup__title" style="margin-bottom: 12px;">Заявка принята!</div>
+                <div class="calc-popup__subtitle" style="margin-bottom: 0;">Мы уже рассчитываем стоимость. Наш специалист свяжется с вами в течение 15 минут для уточнения деталей.</div>
+              </div>
+            `;
+            const newClose = popup.querySelector('#btn-close-calc');
+            if (newClose) {
+              newClose.addEventListener('click', function () {
+                calcOverlay.classList.remove('is-open');
+                document.body.style.overflow = '';
+              });
+            }
+          }
+        });
+      }
+
+      /* ---- Navigation & Local file:// Routing ---- */
+      if (window.location.protocol === 'file:') {
+        document.querySelectorAll('a').forEach(function (a) {
+          var href = a.getAttribute('href');
+          if (href) {
+            if (href === '/') {
+              a.setAttribute('href', 'index.html');
+            } else if (href.startsWith('/')) {
+              var parts = href.split('#');
+              var path = parts[0];
+              var hash = parts[1] ? '#' + parts[1] : '';
+              if (path.endsWith('/')) path = path.slice(0, -1);
+              path = path.slice(1) + '.html';
+              a.setAttribute('href', path + hash);
+            }
+          }
+        });
+      }
+
+      /* ---- Scroll Event for Sticky Header (Desktop) ---- */
+      var burger = document.getElementById('burger-toggle');
+      var nav = document.querySelector('.header-nav');
+      var backdrop = document.getElementById('mobile-backdrop');
+      var header = document.getElementById('site-header');
+
+      function handleScroll() {
+        if (window.innerWidth >= 960) {
+          if (window.scrollY > 50) {
+            header.classList.add('site-header--scrolled');
+          } else {
+            header.classList.remove('site-header--scrolled');
+            header.classList.remove('site-header--expanded');
+            if (burger) burger.classList.remove('is-active');
+          }
+        } else {
+          header.classList.remove('site-header--scrolled');
+          header.classList.remove('site-header--expanded');
+        }
+      }
+      window.addEventListener('scroll', handleScroll);
+      window.addEventListener('resize', handleScroll);
+      handleScroll();
+
+      /* ---- Mobile & Scrolled Desktop Burger Menu Toggle ---- */
+      if (burger && nav && backdrop) {
+        burger.addEventListener('click', function () {
+          if (window.innerWidth >= 960 && header.classList.contains('site-header--scrolled')) {
+            // Desktop scrolled state: toggle horizontal expansion
+            header.classList.toggle('site-header--expanded');
+            burger.classList.toggle('is-active');
+          } else {
+            // Mobile/Tablet or standard state: toggle drawer
+            burger.classList.toggle('is-active');
+            nav.classList.toggle('is-open');
+            backdrop.classList.toggle('is-visible');
+            if (nav.classList.contains('is-open')) {
+              document.body.style.overflow = 'hidden';
+            } else {
+              document.body.style.overflow = '';
+            }
+          }
+        });
+
+        backdrop.addEventListener('click', function () {
+          burger.classList.remove('is-active');
+          nav.classList.remove('is-open');
+          backdrop.classList.remove('is-visible');
+          document.body.style.overflow = '';
+          header.classList.remove('site-header--expanded');
+        });
+
+        nav.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () {
+            burger.classList.remove('is-active');
+            nav.classList.remove('is-open');
+            backdrop.classList.remove('is-visible');
+            document.body.style.overflow = '';
+            header.classList.remove('site-header--expanded');
+          });
+        });
+      }
     })();
   </script>
 
@@ -2049,7 +3371,7 @@
     "name": "CORSTAR",
     "description": "Изготовление и монтаж изделий из искусственного камня в Москве. Столешницы, мойки, подоконники, ванны, ступени.",
     "url": "https://corstar.tilda.ws/",
-    "telephone": "+14153928476",
+    "telephone": "+79999999999",
     "email": "hello.obtix@gmail.com",
     "address": {
       "@type": "PostalAddress",
@@ -2079,56 +3401,6 @@
     "image": "https://corstar.tilda.ws/images/hero_home.png",
     "priceRange": "₽₽"
   }
-  </script>
-
-
-  <!-- ===== NAV & ROUTING SCRIPT ===== -->
-  <script>
-    /* ---- Navigation & Local file:// Routing ---- */
-    (function () {
-      // 1. Local Routing for file:// protocol
-      if (window.location.protocol === 'file:') {
-        document.querySelectorAll('a').forEach(function (a) {
-          var href = a.getAttribute('href');
-          if (href) {
-            if (href === '/') {
-              a.setAttribute('href', 'index.html');
-            } else if (href.startsWith('/')) {
-              var parts = href.split('#');
-              var path = parts[0];
-              var hash = parts[1] ? '#' + parts[1] : '';
-              if (path.endsWith('/')) path = path.slice(0, -1);
-              path = path.slice(1) + '.html';
-              a.setAttribute('href', path + hash);
-            }
-          }
-        });
-      }
-
-      // 2. Mobile Burger Toggle
-      var burger = document.getElementById('burger-toggle');
-      var nav = document.querySelector('.header-nav');
-      if (burger && nav) {
-        burger.addEventListener('click', function () {
-          burger.classList.toggle('is-active');
-          nav.classList.toggle('is-open');
-          if (nav.classList.contains('is-open')) {
-            document.body.style.overflow = 'hidden';
-          } else {
-            document.body.style.overflow = '';
-          }
-        });
-
-        // Close menu on link click
-        nav.querySelectorAll('a').forEach(function (link) {
-          link.addEventListener('click', function () {
-            burger.classList.remove('is-active');
-            nav.classList.remove('is-open');
-            document.body.style.overflow = '';
-          });
-        });
-      }
-    })();
   </script>
 </body>
 

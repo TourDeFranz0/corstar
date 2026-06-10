@@ -7,11 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>О компании CORSTAR — Производство изделий из искусственного камня</title>
   <meta name="description"
-    content="CORSTAR — московский производитель изделий из искусственного камня с опытом более 23 лет. Собственный цех с CNC-оборудованием, 3000+ выполненных проектов, гарантия до 3 лет." />
+    content="CORSTAR — московский производитель изделий из искусственного камня с опытом более 23 лет. Собственный цех с CNC-оборудованием, 3000+ выполненных проектов, гарантия 12 месяцев." />
   <meta property="og:url" content="https://corstar.tilda.ws/o-kompanii/" />
   <meta property="og:title" content="О компании CORSTAR — Производство изделий из искусственного камня" />
   <meta property="og:description"
-    content="Собственное производство в Москве. 3000+ проектов, 23+ года на рынке, гарантия до 3 лет." />
+    content="Собственное производство в Москве. 3000+ проектов, 23+ года на рынке, гарантия 12 месяцев." />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://corstar.tilda.ws/o-kompanii/" />
   <meta name="format-detection" content="telephone=no" />
@@ -1000,7 +1000,7 @@
         scroll-behavior: auto !important;
       }
     }
-  
+
     /* ===== MOBILE NAV DRAWER & BURGER CROSS ===== */
     .header-burger {
       display: none;
@@ -1025,9 +1025,11 @@
     .header-burger.is-active span:nth-child(1) {
       transform: translateY(9px) rotate(45deg);
     }
+
     .header-burger.is-active span:nth-child(2) {
       opacity: 0;
     }
+
     .header-burger.is-active span:nth-child(3) {
       transform: translateY(-9px) rotate(-45deg);
     }
@@ -1036,6 +1038,7 @@
       .header-burger {
         display: flex !important;
       }
+
       .header-nav.is-open {
         display: flex !important;
         flex-direction: column;
@@ -1050,12 +1053,642 @@
         z-index: 99;
         align-items: flex-start;
       }
+
       .header-nav.is-open a {
         font-size: 24px !important;
         font-weight: 500;
       }
     }
-  </style>
+  
+    /* ===== HEADER RE-ALIGNMENT ===== */
+    .site-header {
+      height: 70px;
+      border-bottom: 1px solid #f2f2f2;
+    }
+
+    .header-inner {
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .header-logo {
+      font-size: 32px;
+      letter-spacing: -0.02em;
+    }
+
+    .header-contacts {
+      gap: 12px;
+    }
+
+    .header-contacts .header-phone {
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    /* ===== HEADER RE-ALIGNMENT ===== */
+    .site-header {
+      height: 70px;
+      border-bottom: 1px solid #f2f2f2;
+    }
+
+    .header-inner {
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .header-logo {
+      font-size: 32px;
+      letter-spacing: -0.02em;
+    }
+
+    .header-contacts {
+      gap: 12px;
+    }
+
+    .header-contacts .header-phone {
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    /* ===== HEADER RE-ALIGNMENT ===== */
+    .site-header {
+      height: 70px;
+      border-bottom: 1px solid #f2f2f2;
+    }
+
+    .header-inner {
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .header-logo {
+      font-size: 32px;
+      letter-spacing: -0.02em;
+    }
+
+    .header-contacts {
+      gap: 12px;
+    }
+
+    .header-contacts .header-phone {
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    /* ===== HEADER RE-ALIGNMENT ===== */
+    .site-header {
+      height: 70px;
+      border-bottom: 1px solid #f2f2f2;
+    }
+
+    .header-inner {
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .header-logo {
+      font-size: 32px;
+      letter-spacing: -0.02em;
+    }
+
+    .header-contacts {
+      gap: 12px;
+    }
+
+    .header-contacts .header-phone {
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    /* ===== HEADER RE-ALIGNMENT ===== */
+    .site-header {
+      height: 70px;
+      border-bottom: 1px solid #f2f2f2;
+    }
+
+    .header-inner {
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .header-logo {
+      font-size: 32px;
+      letter-spacing: -0.02em;
+    }
+
+    .header-contacts {
+      gap: 12px;
+    }
+
+    .header-contacts .header-phone {
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    /* ===== NAV DROPDOWN ===== */
+    .nav-item-has-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .nav-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ffffff;
+      border: 1px solid var(--color-border-light, #e8e8e8);
+      border-radius: var(--radius-sm, 12px);
+      padding: 16px;
+      min-width: 220px;
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+      margin-top: 10px;
+      z-index: 110;
+    }
+
+    .nav-dropdown::before {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 6px solid transparent;
+      border-bottom-color: #ffffff;
+    }
+
+    .nav-dropdown::after {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      right: 0;
+      height: 12px;
+    }
+
+    .nav-dropdown a {
+      font-size: 14px !important;
+      font-weight: 400 !important;
+      color: var(--color-secondary, #5d5d5d) !important;
+      transition: color var(--transition-fast, 0.2s ease) !important;
+      text-align: left;
+    }
+
+    .nav-dropdown a:hover {
+      color: var(--color-primary, #000000) !important;
+    }
+
+    /* Show on hover for desktop */
+    @media screen and (min-width: 960px) {
+      .nav-item-has-dropdown:hover .nav-dropdown {
+        display: flex;
+      }
+    }
+
+    @media screen and (max-width: 959px) {
+      .nav-dropdown {
+        display: none !important;
+      }
+    }
+
+    /* ===== HEADER CTA BUTTON ===== */
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      background: #000000;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 500;
+      border-radius: 100px;
+      transition: background 0.2s ease, transform 0.2s ease;
+      cursor: pointer;
+      white-space: nowrap;
+      text-decoration: none;
+      flex-shrink: 0;
+      margin-left: 16px;
+    }
+
+    .header-cta:hover {
+      background: #333333;
+      transform: translateY(-1px);
+      color: #ffffff;
+    }
+
+    .header-cta svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    /* ===== MOBILE NAV DRAWER BACKDROP ===== */
+    .mobile-nav-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 98;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .mobile-nav-backdrop.is-visible {
+      display: block;
+      opacity: 1;
+    }
+
+    /* ===== POPUP CALCULATOR ===== */
+    .calc-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .calc-overlay.is-open {
+      display: flex;
+    }
+
+    .calc-popup {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 48px;
+      width: 100%;
+      max-width: 560px;
+      position: relative;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .calc-popup__close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 32px;
+      height: 32px;
+      background: #f2f2f2;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+    }
+
+    .calc-popup__close:hover {
+      background: #e0e0e0;
+    }
+
+    .calc-popup__close svg {
+      width: 14px;
+      height: 14px;
+      stroke: #000000;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .calc-popup__title {
+      font-size: 28px;
+      font-weight: 500;
+      color: #000000;
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+
+    .calc-popup__subtitle {
+      font-size: 14px;
+      color: #5d5d5d;
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
+
+    .calc-product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .calc-product-btn {
+      padding: 12px 8px;
+      font-size: 13px;
+      font-weight: 500;
+      background: #f7f7f7;
+      border: 2px solid transparent;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: border-color 0.2s ease, background 0.2s ease;
+      text-align: center;
+      color: #000000;
+      font-family: inherit;
+    }
+
+    .calc-product-btn:hover {
+      background: #f0f0f0;
+    }
+
+    .calc-product-btn.is-selected {
+      border-color: #000000;
+      background: #ffffff;
+    }
+
+    .calc-form .form-group {
+      margin-bottom: 16px;
+    }
+
+    .calc-form .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      color: #aaaaaa;
+      margin-bottom: 6px;
+    }
+
+    .calc-form .form-group input,
+    .calc-form .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: none;
+      border-bottom: 1px solid #d9d9d9;
+      background: transparent;
+      font-size: 15px;
+      color: #000000;
+      transition: border-color 0.2s ease;
+      outline: none;
+      border-radius: 0;
+      font-family: inherit;
+    }
+
+    .calc-form .form-group input:focus,
+    .calc-form .form-group textarea:focus {
+      border-color: #000000;
+    }
+
+    .calc-form .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .calc-form .btn-submit-calc {
+      width: 100%;
+      padding: 16px 32px;
+      background: #000000;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 500;
+      border-radius: 12px;
+      transition: background 0.2s ease, transform 0.2s ease;
+      margin-top: 8px;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .calc-form .btn-submit-calc:hover {
+      background: #333333;
+      transform: translateY(-1px);
+    }
+
+    /* ===== MOBILE ONLY CONTACTS DEFAULT (HIDDEN) ===== */
+    .mobile-only-contacts {
+      display: none;
+    }
+
+    /* ===== DESKTOP RESPONSIVE HEADER OVERRIDES ===== */
+    @media screen and (max-width: 1199px) {
+      .header-inner {
+        gap: 16px;
+      }
+
+      .header-logo {
+        font-size: 28px;
+      }
+
+      .header-nav {
+        gap: 16px;
+      }
+
+      .header-nav a {
+        font-size: 14px;
+      }
+
+      .header-cta {
+        padding: 8px 18px;
+        font-size: 12px;
+        margin-left: 8px;
+      }
+    }
+
+    @media screen and (max-width: 1100px) {
+      .header-contacts .icon-social {
+        display: none !important;
+      }
+    }
+
+    @media screen and (max-width: 1024px) {
+      .header-inner {
+        padding: 0 12px;
+        gap: 12px;
+      }
+
+      .header-logo {
+        font-size: 24px;
+      }
+
+      .header-nav {
+        gap: 12px;
+      }
+
+      .header-nav a {
+        font-size: 13px;
+      }
+
+      .header-cta {
+        padding: 8px 14px;
+        font-size: 11px;
+        margin-left: 4px;
+      }
+
+      .header-contacts {
+        gap: 8px;
+      }
+    }
+
+    /* ===== MOBILE RESPONSIVE HEADER OVERRIDES ===== */
+    @media screen and (max-width: 959px) {
+      .header-logo {
+        font-size: 26px;
+      }
+
+      .header-contacts {
+        display: none !important;
+      }
+
+      .header-nav {
+        display: none;
+      }
+
+      .header-inner {
+        gap: 20px;
+      }
+
+      .header-burger {
+        display: flex;
+      }
+
+      .header-nav.is-open {
+        display: flex !important;
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #ffffff;
+        padding: 40px 24px;
+        gap: 24px;
+        z-index: 99;
+        align-items: flex-start;
+      }
+
+      .header-nav.is-open a {
+        font-size: 24px !important;
+        font-weight: 500;
+      }
+
+      /* ===== MOBILE ONLY CONTACTS ===== */
+      .mobile-only-contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: auto;
+        padding-top: 24px;
+        border-top: 1px solid #e8e8e8;
+        width: 100%;
+      }
+
+      .mobile-phone {
+        font-size: 20px;
+        font-weight: 500;
+        color: #000000;
+        text-decoration: none;
+      }
+
+      .mobile-socials {
+        display: flex;
+        gap: 12px;
+      }
+
+      .mobile-socials .icon-social {
+        width: 36px;
+        height: 36px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: block;
+      }
+    }
+
+    /* ===== SCROLLED FLOATING HEADER (DESKTOP) ===== */
+    @media screen and (min-width: 960px) {
+      .site-header {
+        transition: background-color 0.4s ease, height 0.4s ease, border-bottom 0.4s ease;
+      }
+      
+      .header-inner {
+        transition: max-width 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                    background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                    border-radius 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                    border 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                    box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                    height 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                    padding 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                    margin-top 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .header-nav {
+        transition: opacity 0.3s ease, max-width 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
+        display: flex;
+        overflow: hidden;
+      }
+
+      .header-burger {
+        transition: opacity 0.3s ease;
+      }
+
+      /* When scrolled */
+      .site-header--scrolled {
+        background: transparent !important;
+        border-bottom: none !important;
+        height: 85px !important;
+      }
+
+      .site-header--scrolled .header-inner {
+        background: rgba(255, 255, 255, 0.85) !important;
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid rgba(0, 0, 0, 0.08) !important;
+        border-radius: 40px !important;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08) !important;
+        height: 60px !important;
+        max-width: 560px !important; /* fit logo, burger, contacts */
+        padding: 0 24px !important;
+        margin-top: 12px !important;
+      }
+
+      .site-header--scrolled .header-nav {
+        opacity: 0 !important;
+        max-width: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+      }
+
+      .site-header--scrolled .header-burger {
+        display: flex !important;
+        opacity: 1 !important;
+        flex-shrink: 0 !important;
+      }
+
+      .site-header--scrolled .header-contacts .icon-social {
+        display: none !important;
+      }
+
+      /* When scrolled and expanded (burger clicked) */
+      .site-header--scrolled.site-header--expanded .header-inner {
+        max-width: 1200px !important; /* expand width to fit menu links inline */
+        border-radius: 40px !important;
+      }
+
+      @media screen and (max-width: 1240px) {
+        .site-header--scrolled.site-header--expanded .header-inner {
+          max-width: calc(100% - 40px) !important;
+        }
+      }
+
+      .site-header--scrolled.site-header--expanded .header-nav {
+        opacity: 1 !important;
+        max-width: 700px !important; /* open width to show links */
+        visibility: visible !important;
+        pointer-events: auto !important;
+        margin-left: 20px;
+        margin-right: 20px;
+        overflow: visible !important; /* allow dropdowns to display */
+      }
+    }
+
+</style>
 </head>
 
 <body>
@@ -1066,15 +1699,44 @@
       <div class="header-logo">
         <a href="/">CORSTAR</a>
       </div>
-      <nav class="header-nav" aria-label="Основная навигация">
-        <a href="/izdeliya/">Изделия</a>
+                                          <nav class="header-nav" id="main-nav" aria-label="Основная навигация">
+        <div class="nav-item-has-dropdown">
+          <a href="/izdeliya/">Изделия</a>
+          <div class="nav-dropdown">
+            <a href="/izdeliya/#stoleshnitsi">Столешницы</a>
+            <a href="/izdeliya/#podokonniki">Подоконники</a>
+            <a href="/izdeliya/#mojki">Мойки и раковины</a>
+            <a href="/izdeliya/#vanni">Ванны</a>
+            <a href="/izdeliya/#stupeni">Ступени</a>
+          </div>
+        </div>
         <a href="/catalog-kamnya/">Каталог камня</a>
         <a href="/portfolio/">Портфолио</a>
         <a href="/partneram/">Партнерам</a>
-        <a href="/o-kompanii/" class="is-active">О компании</a>
+        <div class="nav-item-has-dropdown">
+          <a href="/o-kompanii/" class="is-active">О компании</a>
+          <div class="nav-dropdown">
+            <a href="/o-kompanii/#about">О нас</a>
+            <a href="/o-kompanii/#production">Производство</a>
+            <a href="/o-kompanii/#partners">Партнёры</a>
+          </div>
+        </div>
         <a href="/kontakty/">Контакты</a>
+
+        <!-- Mobile-only contacts inside drawer -->
+        <div class="mobile-only-contacts">
+          <a href="tel:+79999999999" class="mobile-phone">+7 (999) 999-99-99</a>
+          <div class="mobile-socials">
+            <a href="https://t.me/" class="icon-social"
+              style="background-image:url('images/tild3336-3233-4061-b363-653764393262__image.png')"
+              aria-label="Telegram"></a>
+            <a href="https://wa.me/" class="icon-social"
+              style="background-image:url('images/tild6330-3839-4263-b533-323737306437__image.png')"
+              aria-label="WhatsApp"></a>
+          </div>
+        </div>
       </nav>
-      <div class="header-contacts">
+                                          <div class="header-contacts">
         <a href="https://t.me/" class="icon-social"
           style="background-image:url('images/tild3336-3233-4061-b363-653764393262__image.png')"
           aria-label="Telegram"></a>
@@ -1082,6 +1744,10 @@
           style="background-image:url('images/tild6330-3839-4263-b533-323737306437__image.png')"
           aria-label="WhatsApp"></a>
         <a href="tel:+79999999999" class="header-phone">+7 (999) 999-99-99</a>
+        <a href="#" class="header-cta" id="btn-open-calc">
+          Заказать расчёт
+          <svg viewBox="0 0 24 24"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
       </div>
       <button class="header-burger" aria-label="Открыть меню" id="burger-toggle">
         <span></span>
@@ -1090,6 +1756,9 @@
       </button>
     </div>
   </header>
+
+  <!-- Mobile nav backdrop -->
+  <div class="mobile-nav-backdrop" id="mobile-backdrop"></div>
 
   <main>
 
@@ -1104,7 +1773,8 @@
           <div class="hero-card__content">
             <h1 class="hero-card__title">О&nbsp;компании CORSTAR</h1>
             <p class="hero-card__subtitle">Собственное производство изделий из искусственного камня в&nbsp;Москве.
-              Более 23 лет создаём столешницы, мойки, ванны и&nbsp;индивидуальные объекты любой сложности с&nbsp;гарантией до&nbsp;3&nbsp;лет</p>
+              Более 23 лет создаём столешницы, мойки, ванны и&nbsp;индивидуальные объекты любой сложности
+              с&nbsp;гарантией до&nbsp;3&nbsp;лет</p>
           </div>
         </div>
       </div>
@@ -1116,40 +1786,39 @@
         <h2 class="section-title">Наша история</h2>
         <div class="timeline">
 
-          <div class="timeline-item" id="tl-2003">
-            <div class="timeline-item__year">2003</div>
-            <h3 class="timeline-item__title">Основание компании и первый цех</h3>
-            <p class="timeline-item__text">Начало работы с акриловым камнем — открытие первого производственного цеха в Москве, запуск линейки классических столешниц и подоконников.</p>
-          </div>
-
-          <div class="timeline-item" id="tl-2008">
-            <div class="timeline-item__year">2008</div>
-            <h3 class="timeline-item__title">500-й выполненный проект</h3>
-            <p class="timeline-item__text">Освоение технологий бесшовной склейки радиусных изделий и встроенных интегрированных моек. Выход на B2B-рынок кухонных салонов.</p>
-          </div>
-
           <div class="timeline-item" id="tl-2014">
             <div class="timeline-item__year">2014</div>
-            <h3 class="timeline-item__title">Открытие второго цеха</h3>
-            <p class="timeline-item__text">Масштабирование бизнеса и открытие второго производственного цеха. Запуск обработки кварцевого агломерата на высокоточном оборудовании.</p>
+            <h3 class="timeline-item__title">Основание компании</h3>
+            <p class="timeline-item__text">Начало работы с акриловым камнем — первый цех в Москве, команда из 5 человек
+              и первые заказы на столешницы для частных кухонь.</p>
+          </div>
+
+          <div class="timeline-item" id="tl-2016">
+            <div class="timeline-item__year">2016</div>
+            <h3 class="timeline-item__title">100-й выполненный проект</h3>
+            <p class="timeline-item__text">Расширение ассортимента — интегрированные мойки, подоконники и ванны. Выход
+              на рынок коммерческих интерьеров: ресепшены, барные стойки.</p>
           </div>
 
           <div class="timeline-item" id="tl-2019">
             <div class="timeline-item__year">2019</div>
-            <h3 class="timeline-item__title">Модернизация ЧПУ-производства</h3>
-            <p class="timeline-item__text">Установка автоматизированных обрабатывающих центров с ЧПУ (CNC) в обоих цехах. Внедрение технологии точного цифрового замера (LT-2D3D).</p>
+            <h3 class="timeline-item__title">Модернизация производства</h3>
+            <p class="timeline-item__text">Установка CNC-оборудования для прецизионной обработки камня. Введение
+              кварцевого агломерата и керамогранита в линейку материалов.</p>
           </div>
 
-          <div class="timeline-item" id="tl-2023">
-            <div class="timeline-item__year">2023</div>
-            <h3 class="timeline-item__title">2000-й проект и запуск B2B-сети</h3>
-            <p class="timeline-item__text">Запуск комплексной программы лояльности для дизайнеров и архитекторов. Расширение складских запасов камня до 500+ декоров.</p>
+          <div class="timeline-item" id="tl-2022">
+            <div class="timeline-item__year">2022</div>
+            <h3 class="timeline-item__title">1000-й проект и партнёрская сеть</h3>
+            <p class="timeline-item__text">Запуск программы для дизайнеров и архитекторов. Каталог расширен до 500+
+              оттенков. Команда выросла до 30+ специалистов.</p>
           </div>
 
           <div class="timeline-item" id="tl-today">
             <div class="timeline-item__year">Сегодня</div>
             <h3 class="timeline-item__title">3000+ проектов, 23+ года опыта</h3>
-            <p class="timeline-item__text">Два современных производственных цеха полного цикла, выполнение монтажных работ любой сложности с гарантией 3 года.</p>
+            <p class="timeline-item__text">Полный цикл производства — от замера и проектирования до изготовления и
+              монтажа. Работаем с частными клиентами, дизайн-бюро и строительными компаниями по всей Москве и МО.</p>
           </div>
 
         </div>
@@ -1169,8 +1838,8 @@
             <div class="stat-item__label">Лет на рынке</div>
           </div>
           <div class="stat-item" id="stat-guarantee">
-            <div class="stat-item__number" data-target="3">0</div>
-            <div class="stat-item__label">Года гарантии</div>
+            <div class="stat-item__number" data-target="1">0</div>
+            <div class="stat-item__label">Год гарантии</div>
           </div>
           <div class="stat-item" id="stat-shades">
             <div class="stat-item__number" data-target="500">0</div>
@@ -1195,7 +1864,8 @@
               </svg>
             </div>
             <h3 class="cap-card__title">CNC-обработка камня</h3>
-            <p class="cap-card__text">Прецизионная резка и фрезеровка на современном числовом оборудовании. Точность до&nbsp;0.1&nbsp;мм — идеальная геометрия любого изделия.</p>
+            <p class="cap-card__text">Прецизионная резка и фрезеровка на современном числовом оборудовании. Точность
+              до&nbsp;0.1&nbsp;мм — идеальная геометрия любого изделия.</p>
           </div>
 
           <div class="cap-card" id="cap-seamless">
@@ -1207,7 +1877,8 @@
               </svg>
             </div>
             <h3 class="cap-card__title">Бесшовная стыковка</h3>
-            <p class="cap-card__text">Технология термоклеевого соединения акриловых элементов создаёт монолитную поверхность без видимых стыков и швов.</p>
+            <p class="cap-card__text">Технология термоклеевого соединения акриловых элементов создаёт монолитную
+              поверхность без видимых стыков и швов.</p>
           </div>
 
           <div class="cap-card" id="cap-quality">
@@ -1218,7 +1889,8 @@
               </svg>
             </div>
             <h3 class="cap-card__title">Контроль качества</h3>
-            <p class="cap-card__text">Многоступенчатая проверка на каждом этапе — от входного контроля сырья до финальной полировки и упаковки готового изделия.</p>
+            <p class="cap-card__text">Многоступенчатая проверка на каждом этапе — от входного контроля сырья до
+              финальной полировки и упаковки готового изделия.</p>
           </div>
 
         </div>
@@ -1257,7 +1929,7 @@
                 </svg>
               </div>
               <div class="expertise-item__text">
-                <h4>Гарантия до 3 лет</h4>
+                <h4>Гарантия 12 месяцев</h4>
                 <p>Предоставляем официальную гарантию на все изделия и монтажные работы.</p>
               </div>
             </div>
@@ -1284,7 +1956,7 @@
                 </svg>
               </div>
               <div class="expertise-item__text">
-                <h4>Команда профессионалов</h4>
+                <h4>Команда 30+ специалистов</h4>
                 <p>Опытные мастера, инженеры-проектировщики и выделенные менеджеры проектов.</p>
               </div>
             </div>
@@ -1407,9 +2079,13 @@
             <a href="https://instagram.com/">Instagram</a>
           </div>
         </div>
-        <div>
-          <div class="footer-col-label">&nbsp;</div>
-          <div class="footer-col-content">&nbsp;</div>
+                <div>
+          <div class="footer-col-label">Режим работы</div>
+          <div class="footer-col-content">
+            <span>Пн – Пт: 09:00 – 19:00</span>
+            <span>Сб: 10:00 – 16:00</span>
+            <span>Вс: Выходной</span>
+          </div>
         </div>
       </div>
 
@@ -1463,11 +2139,204 @@
   </script>
 
 
-  <!-- ===== NAV & ROUTING SCRIPT ===== -->
+  
+  <!-- ============================================================
+       POPUP CALCULATOR OVERLAY
+       ============================================================ -->
+  <div class="calc-overlay" id="calc-popup-overlay">
+    <div class="calc-popup" id="calculator-popup">
+      <button class="calc-popup__close" id="btn-close-calc" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="calc-popup__title">Расчёт стоимости</div>
+      <div class="calc-popup__subtitle">Выберите параметры, чтобы получить точный расчёт стоимости изделия в течение 15 минут.</div>
+      
+      <form class="calc-form" id="calculator-form">
+        <div class="form-group">
+          <label>Тип камня</label>
+          <div class="calc-product-grid" id="calc-stone-grid">
+            <button type="button" class="calc-product-btn is-selected" data-value="acrylic">Акриловый</button>
+            <button type="button" class="calc-product-btn" data-value="quartz">Кварцевый</button>
+          </div>
+          <input type="hidden" name="stone_type" id="calc-stone-val" value="acrylic" />
+        </div>
+        
+        <div class="form-group">
+          <label>Тип изделия</label>
+          <div class="calc-product-grid" id="calc-type-grid">
+            <button type="button" class="calc-product-btn is-selected" data-value="stoleshnitsa">Столешница</button>
+            <button type="button" class="calc-product-btn" data-value="mojka">Мойка</button>
+            <button type="button" class="calc-product-btn" data-value="podokonnik">Подоконник</button>
+            <button type="button" class="calc-product-btn" data-value="vanna">Ванна</button>
+            <button type="button" class="calc-product-btn" data-value="stupeni">Ступени</button>
+            <button type="button" class="calc-product-btn" data-value="other">Другое</button>
+          </div>
+          <input type="hidden" name="product_type" id="calc-type-val" value="stoleshnitsa" />
+        </div>
+
+        <div class="form-group">
+          <label for="calc-dim-length">Приблизительные размеры / длина</label>
+          <input type="text" id="calc-dim-length" name="length" placeholder="Например, 3 метра или 3000 мм" required />
+        </div>
+
+        <div class="form-group">
+          <label for="calc-name">Ваше имя</label>
+          <input type="text" id="calc-name" name="name" placeholder="Иван" required />
+        </div>
+
+        <div class="form-group">
+          <label for="calc-phone">Ваш телефон</label>
+          <input type="tel" id="calc-phone" name="phone" placeholder="+7 (___) ___-__-__" required />
+        </div>
+
+        <button type="submit" class="btn-submit-calc">Получить расчёт стоимости</button>
+      </form>
+    </div>
+  </div>
+
+
+  
+  
+  <!-- ============================================================
+       JS Scripts
+       ============================================================ -->
   <script>
-    /* ---- Navigation & Local file:// Routing ---- */
     (function () {
-      // 1. Local Routing for file:// protocol
+      /* ---- Partner Tabs ---- */
+      const tabs = document.querySelectorAll('.partners__tab');
+      const panels = document.querySelectorAll('.partners__panel');
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          tabs.forEach(function (t) {
+            t.classList.remove('partners__tab--active');
+            t.setAttribute('aria-selected', 'false');
+          });
+          panels.forEach(function (p) {
+            p.classList.remove('partners__panel--active');
+          });
+
+          tab.classList.add('partners__tab--active');
+          tab.setAttribute('aria-selected', 'true');
+
+          var panelId = tab.getAttribute('data-panel');
+          var target = document.getElementById('panel-' + panelId);
+          if (target) {
+            target.classList.add('partners__panel--active');
+          }
+        });
+      });
+
+      /* ---- FAQ Accordion ---- */
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(function (item) {
+        const questionBtn = item.querySelector('.faq-item__question');
+        if (questionBtn) {
+          questionBtn.addEventListener('click', function () {
+            const isOpen = item.classList.contains('is-open');
+            // Close other items
+            faqItems.forEach(function (i) {
+              i.classList.remove('is-open');
+              const btn = i.querySelector('.faq-item__question');
+              if (btn) btn.setAttribute('aria-expanded', 'false');
+            });
+
+            if (!isOpen) {
+              item.classList.add('is-open');
+              questionBtn.setAttribute('aria-expanded', 'true');
+            }
+          });
+        }
+      });
+
+      /* ---- Calculator Popup Toggle ---- */
+      const calcOverlay = document.getElementById('calc-popup-overlay');
+      const openCalcBtns = [
+        document.getElementById('btn-open-calc'),
+        document.getElementById('hero-cta-catalog')
+      ];
+      const closeCalcBtn = document.getElementById('btn-close-calc');
+
+      openCalcBtns.forEach(function (btn) {
+        if (btn) {
+          btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            calcOverlay.classList.add('is-open');
+            document.body.style.overflow = 'hidden';
+          });
+        }
+      });
+
+      if (closeCalcBtn) {
+        closeCalcBtn.addEventListener('click', function () {
+          calcOverlay.classList.remove('is-open');
+          document.body.style.overflow = '';
+        });
+      }
+
+      if (calcOverlay) {
+        calcOverlay.addEventListener('click', function (e) {
+          if (e.target === calcOverlay) {
+            calcOverlay.classList.remove('is-open');
+            document.body.style.overflow = '';
+          }
+        });
+      }
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && calcOverlay && calcOverlay.classList.contains('is-open')) {
+          calcOverlay.classList.remove('is-open');
+          document.body.style.overflow = '';
+        }
+      });
+
+      /* ---- Calculator Form Grid Selections ---- */
+      function setupGridSelection(gridId, valId) {
+        const grid = document.getElementById(gridId);
+        const input = document.getElementById(valId);
+        if (grid && input) {
+          const btns = grid.querySelectorAll('.calc-product-btn');
+          btns.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              btns.forEach(b => b.classList.remove('is-selected'));
+              btn.classList.add('is-selected');
+              input.value = btn.getAttribute('data-value');
+            });
+          });
+        }
+      }
+      setupGridSelection('calc-stone-grid', 'calc-stone-val');
+      setupGridSelection('calc-type-grid', 'calc-type-val');
+
+      /* ---- Calculator Submit & Success UI ---- */
+      const calcForm = document.getElementById('calculator-form');
+      if (calcForm) {
+        calcForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const popup = document.getElementById('calculator-popup');
+          if (popup) {
+            popup.innerHTML = `
+              <button class="calc-popup__close" id="btn-close-calc" aria-label="Закрыть">
+                <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
+              <div style="text-align: center; padding: 48px 0;">
+                <div style="font-size: 56px; line-height: 1; margin-bottom: 24px; color: #000000;">✓</div>
+                <div class="calc-popup__title" style="margin-bottom: 12px;">Заявка принята!</div>
+                <div class="calc-popup__subtitle" style="margin-bottom: 0;">Мы уже рассчитываем стоимость. Наш специалист свяжется с вами в течение 15 минут для уточнения деталей.</div>
+              </div>
+            `;
+            const newClose = popup.querySelector('#btn-close-calc');
+            if (newClose) {
+              newClose.addEventListener('click', function () {
+                calcOverlay.classList.remove('is-open');
+                document.body.style.overflow = '';
+              });
+            }
+          }
+        });
+      }
+
+      /* ---- Navigation & Local file:// Routing ---- */
       if (window.location.protocol === 'file:') {
         document.querySelectorAll('a').forEach(function (a) {
           var href = a.getAttribute('href');
@@ -1486,31 +2355,73 @@
         });
       }
 
-      // 2. Mobile Burger Toggle
+      /* ---- Scroll Event for Sticky Header (Desktop) ---- */
       var burger = document.getElementById('burger-toggle');
       var nav = document.querySelector('.header-nav');
-      if (burger && nav) {
-        burger.addEventListener('click', function () {
-          burger.classList.toggle('is-active');
-          nav.classList.toggle('is-open');
-          if (nav.classList.contains('is-open')) {
-            document.body.style.overflow = 'hidden';
+      var backdrop = document.getElementById('mobile-backdrop');
+      var header = document.getElementById('site-header');
+
+      function handleScroll() {
+        if (window.innerWidth >= 960) {
+          if (window.scrollY > 50) {
+            header.classList.add('site-header--scrolled');
           } else {
-            document.body.style.overflow = '';
+            header.classList.remove('site-header--scrolled');
+            header.classList.remove('site-header--expanded');
+            if (burger) burger.classList.remove('is-active');
+          }
+        } else {
+          header.classList.remove('site-header--scrolled');
+          header.classList.remove('site-header--expanded');
+        }
+      }
+      window.addEventListener('scroll', handleScroll);
+      window.addEventListener('resize', handleScroll);
+      handleScroll();
+
+      /* ---- Mobile & Scrolled Desktop Burger Menu Toggle ---- */
+      if (burger && nav && backdrop) {
+        burger.addEventListener('click', function () {
+          if (window.innerWidth >= 960 && header.classList.contains('site-header--scrolled')) {
+            // Desktop scrolled state: toggle horizontal expansion
+            header.classList.toggle('site-header--expanded');
+            burger.classList.toggle('is-active');
+          } else {
+            // Mobile/Tablet or standard state: toggle drawer
+            burger.classList.toggle('is-active');
+            nav.classList.toggle('is-open');
+            backdrop.classList.toggle('is-visible');
+            if (nav.classList.contains('is-open')) {
+              document.body.style.overflow = 'hidden';
+            } else {
+              document.body.style.overflow = '';
+            }
           }
         });
 
-        // Close menu on link click
+        backdrop.addEventListener('click', function () {
+          burger.classList.remove('is-active');
+          nav.classList.remove('is-open');
+          backdrop.classList.remove('is-visible');
+          document.body.style.overflow = '';
+          header.classList.remove('site-header--expanded');
+        });
+
         nav.querySelectorAll('a').forEach(function (link) {
           link.addEventListener('click', function () {
             burger.classList.remove('is-active');
             nav.classList.remove('is-open');
+            backdrop.classList.remove('is-visible');
             document.body.style.overflow = '';
+            header.classList.remove('site-header--expanded');
           });
         });
       }
     })();
   </script>
+
+
+
 </body>
 
 </html>
